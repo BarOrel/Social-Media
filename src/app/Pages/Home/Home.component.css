@@ -1,6 +1,30 @@
 .container{
      width: 100vw;
-     background-color: red;
-     min-height: 60vh;
+     background-color: #18191A;
+     min-height: 200vh;
+     display: flex;
+     
+}
 
+.centerDiv{
+     width:100vw;
+     display: flex;
+     justify-content: center;
+     
+     
+}
+.feed{
+     margin-top: 8vh;
+}
+
+.sidebar{
+     right: 20vw;
+     top: 8vh;
+     position: fixed;
+}
+
+.friedsnavbar{
+     left: 20vw;
+     top: 8vh;
+     position: fixed;
 }

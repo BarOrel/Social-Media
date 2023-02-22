@@ -1,0 +1,132 @@
+.post{
+     width:25vw;
+     
+     background-color: rgb(34, 34, 46);
+     border: 1px solid #000000;
+     border-radius: 20px;
+     margin-top: 3vh;
+
+}
+
+.top{
+    display: flex; 
+}
+.topHeadline{
+     width: 100%;
+}
+.topHeadline h2{
+     margin-top: 24px;
+     margin-left: 13px;
+     color: #fff;
+
+}
+.topHeadline p{
+     padding-left: 0px;
+     margin-left: 15px;
+     margin-top: 3px;
+     color: #e4e4e4;
+
+}
+.top img{
+     margin-left: 30px;
+     margin-top: 20px;
+     max-width: 90px;
+     border-radius: 50px;
+}
+
+.headbtn{
+     margin-top: 5px;
+     margin-right: 15px;
+     font-size: 25px;
+     height: 70px;
+     width: 60px;
+     color: #fff;
+     border: 0px;
+     background-color: transparent;
+}
+p{
+     font-size: 22px;
+     color: #fff;
+
+     padding-top: 10px;
+     padding-left: 20px;
+     padding-right: 20px;
+     
+}
+img{
+     margin-top: 20px;
+     max-width: 100%;
+}
+.postinfo{
+     justify-content: space-between;
+     width: 100%;
+     display: flex;
+     padding-top: 20px;
+     padding-bottom: 20px;
+}
+
+.postinfo p {
+     
+     padding: 0px;
+     padding-left: 20px;
+     padding-right: 20px;
+     font-size: 18px;
+     color: #fff;
+}
+.btnaction{
+     display: flex;
+     justify-content: space-between;  
+     width: 100%;
+     padding-bottom: 20px;
+}
+.btnaction button{
+     margin-left: 20px;
+     margin-right: 20px;
+     height: 40px;
+     width: 20%;
+}
+
+.comment{
+     
+     border: 2px solid #ccc;
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
+     outline: none;
+     font-size: 20px;
+     color: #ffff;
+     background-color: transparent;
+     height: 40px;
+     width: 80%;
+     border-radius: 30px;
+}
+.commentsec{
+     width:100%;
+     display: flex;
+     justify-content: center;
+     padding-bottom: 20px;
+
+}
+
+.sendbtn{
+     border: 1px solid #acacac;
+     width: 60px;
+     border-radius: 20px;
+     font-size: 20px;
+     background-color: transparent;
+     color: #fff;
+     border: 1px solid #fff;
+
+}
+
+input[type=text]:focus {
+     border: 2px solid #555;
+   }
+
+   .btnaction button{
+     color: #fff;
+     background-color: transparent;
+     font-size: 25px;
+     border-radius: 30px;
+     border: 1px solid #fff;
+   }
+
