@@ -128,5 +128,13 @@ input[type=text]:focus {
      font-size: 25px;
      border-radius: 30px;
      border: 1px solid #fff;
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
+
    }
+
+   .btnaction button:hover{
+     background-color: rgba(116, 116, 116, 0.466)
+   }
+
 

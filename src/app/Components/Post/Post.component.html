@@ -17,12 +17,12 @@
     <p class="comments">36 Comments</p>
   </div>
   <div class="btnaction">
-    <button>Like</button>
-    <button>Coment</button>
+    <button id="like">Like</button>
+    <button (click)="input.select()" >Coment</button>
     <button>Share</button>
   </div>
   <div class="commentsec">
-    <input class="comment" type="text" />
+    <input #input class="comment" type="text" />
     <!-- <button class="sendbtn">Send</button> -->
 
   </div>

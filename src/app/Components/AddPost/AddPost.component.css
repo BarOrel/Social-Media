@@ -32,3 +32,28 @@ input{
      width: 80%;
      border-radius: 30px;
 }
+
+.addimg{
+     display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addimg button{
+     width: 50%;
+     height: 40px;
+     font-size: 20px;
+     border-radius: 30px;
+     background-color: transparent;
+     color: #fff;
+     border: 1px solid #ffffff;
+}
+
+.postbtn{
+     width: 150px;
+     height: 40px;
+     font-size: 20px;
+     border-radius: 20px;
+     float: right;
+     margin-right: 40px;
+}
