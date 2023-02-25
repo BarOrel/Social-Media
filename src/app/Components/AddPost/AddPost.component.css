@@ -38,7 +38,9 @@ input{
   justify-content: center;
   align-items: center;
 }
-
+.addimg button:hover{
+     background-color: #cccccc46;
+}
 .addimg button{
      width: 50%;
      height: 40px;
@@ -56,4 +58,7 @@ input{
      border-radius: 20px;
      float: right;
      margin-right: 40px;
+}
+.postbtn:hover{
+    background-color: #ccc;
 }

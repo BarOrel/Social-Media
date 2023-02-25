@@ -1,1 +1,41 @@
-<div class="main"></div>
+<div class="main">
+     <div class="profilerow">
+          <img src="https://scontent.ftlv5-1.fna.fbcdn.net/v/t39.30808-6/295120901_5655883821131158_2671293067294845728_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6XrJYlwhdmQAX92zoI3&_nc_ht=scontent.ftlv5-1.fna&oh=00_AfCP6QcBDkEn3PHp88rdBeS5mAvbse_cTZs5Zh8EAWw4-w&oe=63FB6B8D" >
+          <h2>Bar Orel</h2>
+     </div>
+     <div class="row"> 
+          <img src="https://www.iconpacks.net/icons/1/free-home-icon-189-thumb.png" >
+          <h2>Home</h2>
+     </div>
+     <div class="row">
+          <img src="https://cdn-icons-png.flaticon.com/512/2132/2132690.png" >
+          <h2>Explore</h2>
+     </div>
+     <div class="row">
+          <img src="https://cdn-icons-png.flaticon.com/512/6915/6915254.png" >
+          <h2>Notifications</h2>
+     </div>
+     <div class="row">
+          <img src="https://img.icons8.com/color/512/settings--v1.png" >
+          <div class="Settings-row" (click)="SettingsMenufunc()"> 
+               <h2>Settings</h2>
+               <span *ngIf="SettingsMenu" class="material-symbols-outlined">
+                    expand_less
+                    </span>
+               <span *ngIf="!SettingsMenu" class="material-symbols-outlined">
+                    expand_more
+                    </span>
+
+          </div>
+          
+     </div>
+     <div class="Settings" *ngIf="SettingsMenu"> 
+          
+         <h2>Saved</h2>
+         <h2>Dark Mode</h2>
+         <h2>Account Details</h2>
+         <h2>Logout</h2>
+
+     </div>
+
+</div>

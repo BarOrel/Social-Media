@@ -1,7 +1,88 @@
 .main{
      background-color: rgb(46, 46, 95);
-     width: 10vw;
-     height: 50vh;
+     width: 28vh;
+     padding-bottom: 10px;
      border-radius: 20px;
      min-width: 150px;
+}
+.profilerow{
+     margin-top: 10px;
+     display: flex;
+     width: 100%;
+     padding-top: 5px;
+     padding-bottom: 5px;
+    
+}
+.profilerow h2 {
+     color: #fff;
+     margin-top: 15px;
+     margin-left: 10px;
+}
+.profilerow:hover{
+     background-color: #a1a1a188;
+     cursor: pointer;
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
+}
+img{
+     margin-left: 10px;
+     margin-top: 0px;
+     max-width: 7vh;
+     border-radius: 50px;
+     
+}
+.row h2 {
+     color: #fff;
+     margin-top: 7px;
+     margin-left: 10px;
+     font-weight: 500;
+     font-size: 20px;
+}
+.row{
+     padding-top: 5px;
+     padding-bottom: 5px;
+     display: flex;
+     width: 100%;
+}
+.row:hover{
+     background-color: #a1a1a188;
+     cursor: pointer;
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
+}
+.row img{
+     margin-left: 10px;
+     margin-top: 0px;
+     max-width: 4vh;
+     border-radius: 50px;
+     
+}
+.Settings-row{
+     justify-content: space-between;
+     width: 100%;
+}
+.Settings-row span{
+     font-size: 35px;
+     overflow: hidden;
+     margin-top: 2px;
+     
+}
+.Settings-row{
+     display: flex;   
+}
+
+
+.Settings h2{
+     color: #fff;
+     font-weight: 500;
+     font-size: 18px;
+     padding-bottom: 6px;
+     padding-top: 9px;
+     padding-left: 60px;
+   
+}
+
+.Settings h2:hover{
+    background-color: rgba(190, 190, 190, 0.144);
+    cursor: pointer;
 }

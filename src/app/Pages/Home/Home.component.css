@@ -18,13 +18,13 @@
 }
 
 .sidebar{
-     right: 20vw;
+     right: 10vw;
      top: 8vh;
      position: fixed;
 }
 
 .friedsnavbar{
-     left: 20vw;
+     left: 10vw;
      top: 8vh;
      position: fixed;
 }
