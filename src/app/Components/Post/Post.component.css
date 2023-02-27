@@ -10,19 +10,27 @@
 
 .top{
     display: flex; 
+    padding-bottom: 20px;
 }
 .topHeadline{
      width: 100%;
 }
 .topHeadline h2{
      margin-top: 24px;
-     margin-left: 13px;
+     margin-left: 20px;
      color: #fff;
+     cursor: pointer;
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
+
+}
+.topHeadline h2:hover{
+color: #9b9b9b;
 
 }
 .topHeadline p{
      padding-left: 0px;
-     margin-left: 15px;
+     margin-left: 20px;
      margin-top: 3px;
      color: #e4e4e4;
 
@@ -30,9 +38,16 @@
 .top img{
      margin-left: 30px;
      margin-top: 20px;
-     max-width: 90px;
+     max-height: 90px ;
+     cursor: pointer;
      border-radius: 50px;
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
 }
+.top img:hover{
+     opacity: 60%;
+}
+
 
 .headbtn{
      margin-top: 5px;
@@ -56,6 +71,9 @@ p{
 img{
      margin-top: 20px;
      max-width: 100%;
+}
+img:hover{
+     cursor: pointer;
 }
 .postinfo{
      justify-content: space-between;

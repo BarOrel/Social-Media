@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/Services/UserService/User.service';
 
 @Component({
   selector: 'app-SideNavbar',
@@ -6,12 +8,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./SideNavbar.component.css']
 })
 export class SideNavbarComponent implements OnInit {
+  user:any;
+  
   SettingsMenu:boolean = false
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private userService:UserService,private router:Router) { 
+   
   }
 
+  ngOnInit() {
+    this.userService.GetUser().subscribe((data:any)=>{
+      console.log(data)
+      this.user = data
+    })
+  }
+
+  scrollUp(Smooth:boolean){
+    if(Smooth == true){
+      window.scroll({ 
+        top: 0, 
+        left: 0, 
+        behavior: 'smooth' 
+      });
+    }
+    else{
+      window.scroll({ 
+        top: 0, 
+        left: 0, 
+      });
+
+    }
+   }
+  
+  NavigateToProfile(user:any){
+    this.router.navigate(['profile/'+ user])
+    this.scrollUp(false)
+
+  }
 
   SettingsMenufunc(){
     if(this.SettingsMenu){

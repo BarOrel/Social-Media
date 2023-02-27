@@ -9,13 +9,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PostPageComponent implements OnInit {
   id: number = 0;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { 
+    
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.id = Number(params["id"]);
 
-      
         console.log(this.id)
    
 

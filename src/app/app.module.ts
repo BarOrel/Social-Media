@@ -1,4 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { NotificationsComponent } from './Pages/Notifications/Notifications.comp
 import { PostPageComponent } from './Pages/PostPage/PostPage.component';
 import { ProfileComponent } from './Pages/Profile/Profile.component';
 import { RegisterComponent } from './Pages/Register/Register.component';
+import { DateAsAgoPipe } from './shared/date-as-ago.pipe';
  
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { RegisterComponent } from './Pages/Register/Register.component';
     ExploreComponent,
     NotificationsComponent,
     PostPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    DateAsAgoPipe
     
  
     
@@ -37,11 +40,15 @@ import { RegisterComponent } from './Pages/Register/Register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
     
    
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    DateAsAgoPipe
+  ]
 })
 export class AppModule { }

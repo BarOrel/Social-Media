@@ -1,8 +1,8 @@
 <div class="container">
   <div class="centerDiv">
     <div class="feed" >
-      <app-AddPost class="Addpost"></app-AddPost>
-      <app-Post></app-Post>
+      <app-AddPost class="Addpost" ></app-AddPost>
+      <app-Post *ngFor="let post of list" [item]="post" ></app-Post>
     </div>
 </div>
 </div>
