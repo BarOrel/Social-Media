@@ -6,8 +6,12 @@ import { AddPostComponent } from './Components/AddPost/AddPost.component';
 import { FriendsNavbarComponent } from './Components/FriendsNavbar/FriendsNavbar.component';
 import { PostComponent } from './Components/Post/Post.component';
 import { SideNavbarComponent } from './Components/SideNavbar/SideNavbar.component';
+import { ExploreComponent } from './Pages/Explore/Explore.component';
 import { HomeComponent } from './Pages/Home/Home.component';
 import { LoginComponent } from './Pages/Login/Login.component';
+import { NotificationsComponent } from './Pages/Notifications/Notifications.component';
+import { PostPageComponent } from './Pages/PostPage/PostPage.component';
+import { ProfileComponent } from './Pages/Profile/Profile.component';
 import { RegisterComponent } from './Pages/Register/Register.component';
  
 @NgModule({
@@ -19,7 +23,12 @@ import { RegisterComponent } from './Pages/Register/Register.component';
     AddPostComponent,
     PostComponent,
     SideNavbarComponent,
-    FriendsNavbarComponent
+    FriendsNavbarComponent,
+    ExploreComponent,
+    NotificationsComponent,
+    PostPageComponent,
+    ProfileComponent
+    
  
     
   

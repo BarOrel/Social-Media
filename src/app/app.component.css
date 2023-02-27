@@ -1,2 +1,14 @@
 .main{
 }
+
+.sidebar{
+     right: 10vw;
+     top: 8vh;
+     position: fixed;
+}
+
+.friedsnavbar{
+     left: 10vw;
+     top: 8vh;
+     position: fixed;
+}

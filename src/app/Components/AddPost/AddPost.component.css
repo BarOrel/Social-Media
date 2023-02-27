@@ -3,6 +3,8 @@
      width: 25vw;
      background-color: rgb(46, 46, 95);
      border-radius: 20px;
+     padding-bottom: 20px;
+     
 }
 
 .head{
@@ -18,7 +20,7 @@ img{
      
 }
 input{
-     
+     padding-left: 10px;
      margin-top: 30px;
      margin-left: 10px;
      border: 2px solid #ccc;
@@ -29,7 +31,7 @@ input{
      color: #ffff;
      background-color: transparent;
      height: 60px;
-     width: 80%;
+     width: 62%;
      border-radius: 30px;
 }
 
