@@ -1,6 +1,6 @@
 .main{
     
-     width: 25vw;
+
      background-color: rgb(46, 46, 95);
      border-radius: 20px;
      padding-bottom: 20px;
@@ -63,4 +63,28 @@ input{
 }
 .postbtn:hover{
     background-color: #ccc;
+}
+.btn{
+     border-color: #fff;
+     color: #fff;
+     margin-left: 10px;
+     margin-top: 30px;
+     overflow: auto;
+     width: 60px;
+     height: 60px;
+     background-color: transparent;
+     border-radius: 20px;
+}
+.btn:hover{
+     background-color: #cccccc62;
+}
+span{
+     overflow: hidden;
+     font-size: 50px;
+}
+
+label{
+     
+     font-size: 25px;
+     color: #fff;
 }

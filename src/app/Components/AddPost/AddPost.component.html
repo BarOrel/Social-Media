@@ -1,12 +1,24 @@
 <div class="main">
      <div class="head">
-          <img src="https://scontent.ftlv5-1.fna.fbcdn.net/v/t39.30808-6/295120901_5655883821131158_2671293067294845728_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6XrJYlwhdmQAX92zoI3&_nc_ht=scontent.ftlv5-1.fna&oh=00_AfCP6QcBDkEn3PHp88rdBeS5mAvbse_cTZs5Zh8EAWw4-w&oe=63FB6B8D" >
-          <input type="text" placeholder="What would you like to share?" />
-
-     </div>
-     <!-- <div class="addimg">
-          <button class="addimgbtn" >Add an Image</button>
-     </div> -->
-     <button class="postbtn">Post</button>
+          <img src="{{item.imgUrl}}" >
+          <input type="text" placeholder="What would you like to share?" [(ngModel)]="ContentText" />
+          <button (click)="ShowImg = true" *ngIf="!ShowImg" class="btn" ><span class="material-symbols-outlined">
+               add_photo_alternate
+               </span></button>
+          <button (click)="ShowImg = false"  *ngIf="ShowImg" class="btn"><span class="material-symbols-outlined">
+               image_not_supported
+               </span></button>
+               
+               
+               
+               
+          </div>
+          <div *ngIf="ShowImg">
+               <label >Image Link :</label>
+               <input [(ngModel)]="ImageText"    type="text"> 
+               
+               
+          </div>
+               <button class="postbtn" (click)="AddPost()">Post</button>
      
 </div>

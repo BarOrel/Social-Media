@@ -13,18 +13,36 @@
   <img *ngIf="item.post.imgUrl != 'string'" (click)="NavigateToPost(item.post.id)" src="{{item.post.imgUrl}}">
   
   <div class="postinfo">
-    <p *ngIf="item.likesCounter != 0" class="likes">{{item.likesCounter}} Likes</p>
+    <p class="likes">{{item.likesCounter}} Likes</p>
     <p class="comments">{{item.commentsCounter}} Comments</p>
   </div>
   <div class="btnaction">
-    <button id="like" (click)="Like(item.post.id)" >Like</button>
-    <button (click)="input.select()" >Coment</button>
+    <button id="like" (click)="Like(item.post.id)" [ngStyle]="{'background-color': (IsLiked == true) ? '#73c7af' : ''}" >Like</button>
+    <button (click)="Comment(item.post.id,input.value)" (click)="input.value='' ">Coment</button>
     <button>Share</button>
   </div>
   <div class="commentsec">
-    <input #input class="comment" type="text" />
+    
+    <input #input  (keyup.enter)="Comment(item.post.id,input.value)" (keyup.enter)="input.value='' " class="comment" type="text" />
     <!-- <button class="sendbtn">Send</button> -->
 
   </div>
+  <div class="comment-section">
+    <div  *ngFor="let item of item.comments;let i = index" > 
+      <div class="commentbox" *ngIf="i < index">
+      <img src="https://content3.jdmagicbox.com/comp/hyderabad/u4/040pxx40.xx40.150610163007.d2u4/catalogue/arka-images-photography-institute-and-studio-begumpet-hyderabad-photography-institutes-iyozn924za.jpg" />
+      <div>
+        <h2>Bar Orel</h2>
+        <h3 >{{item.comment.content}}</h3>
+        
+      </div>
+      
+      <p class="commentTime">{{item.comment.createdTime |  dateAsAgo }}</p>
+    </div>
 
+
+    </div>
+    <a *ngIf="index == 3 && item.comments.length > 3"  (click)="index = 999" >Show all comments</a>
+    <a *ngIf="index == 999&& item.comments.length > 3"  (click)="index = 3" >Close </a>
+  </div>
 </div>

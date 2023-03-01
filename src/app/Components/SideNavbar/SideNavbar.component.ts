@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/UserService/User.service';
 
@@ -9,17 +9,14 @@ import { UserService } from 'src/app/Services/UserService/User.service';
 })
 export class SideNavbarComponent implements OnInit {
   user:any;
-  
+  @Input() item:any;
   SettingsMenu:boolean = false
   constructor(private userService:UserService,private router:Router) { 
    
   }
 
   ngOnInit() {
-    this.userService.GetUser().subscribe((data:any)=>{
-      console.log(data)
-      this.user = data
-    })
+   
   }
 
   scrollUp(Smooth:boolean){

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-FriendsNavbar',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./FriendsNavbar.component.css']
 })
 export class FriendsNavbarComponent implements OnInit {
-
+  @Input() item:any;
   constructor() { }
 
   ngOnInit() {

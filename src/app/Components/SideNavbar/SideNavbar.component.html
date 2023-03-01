@@ -1,7 +1,7 @@
 <div class="main">
-     <div class="profilerow" *ngIf="user != null" (click)="NavigateToProfile(user.userId)">
-          <img src="{{user.imgUrl}}" >
-          <h2>{{user.fullName}}</h2>
+     <div class="profilerow" *ngIf="item != null" (click)="NavigateToProfile(item.userId)">
+          <img src="{{item.imgUrl}}" >
+          <h2>{{item.fullName}}</h2>
      </div>
      <div class="row" routerLink="home" (click)="scrollUp(true)"> 
           <img src="https://www.iconpacks.net/icons/1/free-home-icon-189-thumb.png" >

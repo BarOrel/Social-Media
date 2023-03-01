@@ -15,6 +15,7 @@ import { PostPageComponent } from './Pages/PostPage/PostPage.component';
 import { ProfileComponent } from './Pages/Profile/Profile.component';
 import { RegisterComponent } from './Pages/Register/Register.component';
 import { DateAsAgoPipe } from './shared/date-as-ago.pipe';
+import { FormsModule } from '@angular/forms';
  
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DateAsAgoPipe } from './shared/date-as-ago.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
     
    
 

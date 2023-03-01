@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private postService:PostService) { 
     postService.GetAll().subscribe((data:any)=>{
       this.list = data;
-      console.log(data)
+      console.log(this.list)
     })
   }
 
