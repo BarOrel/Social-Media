@@ -13,11 +13,11 @@ export class AppComponent implements OnInit {
     
     
   }
-  ngOnInit(): void {
-    this.userService.GetUser().subscribe((data:any)=>{
-      console.log(data)
-      this.user = data
-    })
+   ngOnInit() {
+    //  this.userService.GetUser().subscribe((data:any)=>{
+    //   console.log(data)
+    //   this.user = data
+    // })
   }
   
   onOutletLoaded(component:any) {

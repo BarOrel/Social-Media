@@ -5,6 +5,7 @@ import { LoginModel } from 'src/app/Models/DTO/LoginModel';
 import { RegisterModel } from 'src/app/Models/DTO/RegisterModel';
 
 import Swal from 'sweetalert2';
+import { EventService } from '../EventService/event.service';
 
 
 
@@ -17,7 +18,8 @@ export class AuthService {
   IsLoggedIn: boolean = false;
   
 
-  constructor(private http:HttpClient
+  constructor(private http:HttpClient,
+    private eventService:EventService
     ,private router:Router) {
 
      }
@@ -30,6 +32,7 @@ export class AuthService {
           localStorage.setItem('Authorization', data.token)
           localStorage.setItem('UserId', data.userid)
           localStorage.setItem('Username', data.username)
+          this.eventService.sendClickEventUser();
           Swal.fire(
             '',
             'Logged in Successfully',
@@ -59,12 +62,15 @@ export class AuthService {
           login.Password = model.Password
           login.Username = model.Username
           this.Login(login)
+          
+
           Swal.fire(
             '',
             'Account Created Succesfully',
             'success'
           )
         
+
 
         },(err) => 
         {   
@@ -86,8 +92,8 @@ export class AuthService {
       localStorage.removeItem('Authorization')
       localStorage.removeItem('UserId')
       localStorage.removeItem('Username')
-
       this.IsLoggedIn = false;
+      this.eventService.sendClickEventUser();
       this.router.navigate([''])
       
     }

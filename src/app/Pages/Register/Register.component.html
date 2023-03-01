@@ -36,23 +36,25 @@
           <option>Female</option>
           <option>Other</option>
         </select>
-        <a href="#">Forgot your password?</a>
+      <br>
         <button (click)="NextPageReg()" >Next</button>
       </div>
       <div class="form" action="#" *ngIf="index == 2">
         <h1>Sign Up</h1>
+        <h3>Account Details</h3>
         <!-- <div class="social-container">
           <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
           <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <span>or use your account</span> -->
+        <input type="email" placeholder="Email" [(ngModel)]="EmailText" />
         <input type="email" placeholder="Username" [(ngModel)]="UsernameText" />
         <input type="password" placeholder="Password" [(ngModel)]="PasswordText" />
         <input type="password" placeholder="Confirm Password" [(ngModel)]="ConfirmPasswordText" />
     
         
-        <a href="#">Forgot your password?</a>
+        
         <button (click)="SignUp()" >Sign Up</button>
         <br>
         <button (click)="index = 1" >Back</button>

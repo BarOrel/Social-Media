@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthService } from '../Auth/Auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,10 @@ export class UserService {
 
   BaseUrl = 'https://localhost:7218/api/User/'
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private authSerivce:AuthService) { }
   
   
   GetUser(){
-    return this.http.get(this.BaseUrl+"?UserId="+"23d3671f-62fb-4812-a42d-90b87f92bcaf");
+    return this.http.get(this.BaseUrl+"?UserId="+this.authSerivce.userId());
   }
 }

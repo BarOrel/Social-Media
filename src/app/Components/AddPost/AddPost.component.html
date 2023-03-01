@@ -1,6 +1,8 @@
 <div class="main">
      <div class="head">
-          <img src="{{item.imgUrl}}" >
+          
+          <img *ngIf="item != null"  src="{{item.imgUrl}}" >
+          <img *ngIf="item == null"  src="http://cdn.onlinewebfonts.com/svg/img_183066.png" >
           <input type="text" placeholder="What would you like to share?" [(ngModel)]="ContentText" />
           <button (click)="ShowImg = true" *ngIf="!ShowImg" class="btn" ><span class="material-symbols-outlined">
                add_photo_alternate

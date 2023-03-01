@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Like } from 'src/app/Models/Like';
+import { AuthService } from '../Auth/Auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class PostService {
 
   BaseUrl = 'https://localhost:7218/api/Post/'
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private authSerivce:AuthService) { }
   
   
   GetAll(){
@@ -29,7 +30,7 @@ export class PostService {
   
   
   Comment(comment:any){
-   
+    comment.UserId =  this.authSerivce.userId()
 
     return this.http.post(this.BaseUrl+"Comment" ,comment);
   }
@@ -42,7 +43,7 @@ export class PostService {
   Like(postid:any){
     let like = new Like
     like.PostId = postid
-    like.UserId = '123'
+    like.UserId = this.authSerivce.userId()
 
     return this.http.post(this.BaseUrl+"Like" , like);
   }
@@ -50,7 +51,7 @@ export class PostService {
   IsLike(id:any){
     let like = new Like()
     like.PostId = id
-    like.UserId = '123'
+    like.UserId = this.authSerivce.userId()
     return this.http.post(this.BaseUrl+"Like/IsLiked" , like);
   }
 }

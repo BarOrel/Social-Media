@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { ProfileComponent } from './Pages/Profile/Profile.component';
 import { RegisterComponent } from './Pages/Register/Register.component';
 import { DateAsAgoPipe } from './shared/date-as-ago.pipe';
 import { FormsModule } from '@angular/forms';
+import { TokenInterseptorService } from './Services/Auth/TokenInterseptor/TokenInterseptor.service';
+import { IsLoggedInServiceService } from './Services/Auth/is-logged-in-service.service';
  
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { FormsModule } from '@angular/forms';
    
 
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterseptorService,multi:true},IsLoggedInServiceService],
   bootstrap: [AppComponent],
   exports: [
     DateAsAgoPipe
