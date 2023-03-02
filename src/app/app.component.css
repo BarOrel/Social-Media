@@ -12,3 +12,17 @@
      top: 8vh;
      position: fixed;
 }
+
+
+
+@media (max-width:1400px) {
+     .friedsnavbar{
+          left: 1vw;
+         
+        
+     }
+     
+     .sidebar{
+          right: 1vw;
+     }
+}

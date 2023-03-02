@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/Services/Auth/Auth.service';
@@ -11,6 +11,7 @@ import { UserService } from 'src/app/Services/UserService/User.service';
   styleUrls: ['./SideNavbar.component.css']
 })
 export class SideNavbarComponent implements OnInit {
+  public currentWindowWidth: number = 0;
   clickeventsub: Subscription;
   user:any;
   @Input() item:any;
@@ -77,4 +78,17 @@ export class SideNavbarComponent implements OnInit {
     }
     else{this.AccountMenu = true}
   }
+
+
+
+
+
+
+  @HostListener('window:resize')
+  onResize() {
+    this.currentWindowWidth = window.innerWidth
+    console.log(this.currentWindowWidth)
+  }
+
+
 }

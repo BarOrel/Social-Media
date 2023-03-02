@@ -19,3 +19,9 @@
      margin-top: 8vh;
 }
 
+@media (max-width:1150px) {
+     .feed{
+          margin-top: 1vh;
+     }
+     
+}

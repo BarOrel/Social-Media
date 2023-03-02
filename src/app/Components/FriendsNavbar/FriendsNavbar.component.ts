@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/Services/Auth/Auth.service';
 import { EventService } from 'src/app/Services/EventService/event.service';
@@ -9,6 +9,7 @@ import { EventService } from 'src/app/Services/EventService/event.service';
   styleUrls: ['./FriendsNavbar.component.css']
 })
 export class FriendsNavbarComponent implements OnInit {
+  public currentWindowWidth: number = 0;
   IsLoggedIn:any
   clickeventsub: Subscription;
   @Input() item:any;
@@ -19,6 +20,14 @@ export class FriendsNavbarComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.IsLoggedIn = this.authService.isLoggedIn()
+    
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.currentWindowWidth = window.innerWidth
+    console.log(this.currentWindowWidth)
   }
 
 }

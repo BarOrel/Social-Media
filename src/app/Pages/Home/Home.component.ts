@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { EventService } from 'src/app/Services/EventService/event.service';
 import { PostService } from 'src/app/Services/PostService/Post.service';
 
 @Component({
@@ -8,14 +10,21 @@ import { PostService } from 'src/app/Services/PostService/Post.service';
 })
 export class HomeComponent implements OnInit {
   list:any;
-  constructor(private postService:PostService) { 
-    postService.GetAll().subscribe((data:any)=>{
+  clickeventsub: Subscription;
+  constructor(private postService:PostService,private service: EventService) { 
+    this.clickeventsub = this.service.getEvent().subscribe(() => {
+      this.LoadPage()
+    });
+  }
+  
+  ngOnInit() {
+    this.LoadPage()
+  }
+
+  LoadPage(){
+    this.postService.GetAll().subscribe((data:any)=>{
       this.list = data;
       console.log(this.list)
     })
   }
-
-  ngOnInit() {
-  }
-
 }

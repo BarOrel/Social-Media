@@ -5,7 +5,7 @@
      border: 1px solid #000000;
      border-radius: 20px;
      margin-top: 3vh;
-   
+     min-width: 300px;
 }
 
 .top{
@@ -16,6 +16,7 @@
      width: 100%;
 }
 .topHeadline h2{
+     text-transform: capitalize;
      margin-top: 24px;
      margin-left: 20px;
      color: #fff;
@@ -110,7 +111,7 @@ img:hover{
 }
 
 .comment{
-     
+     padding-left: 20px;
      border: 2px solid #ccc;
      -webkit-transition: 0.5s;
      transition: 0.5s;
@@ -191,10 +192,18 @@ input[type=text]:focus {
      margin-left: 10px;
 }
 .comment-section h2{
+     text-transform: capitalize;
      margin-left: 7px;
      color: #7797ffc4;
      font-weight: 600;
      font-size: 20px;
+     cursor: pointer;
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
+}
+.comment-section h2:hover{
+     color: rgb(80, 97, 151);
+     
 }
 
 .comment-section a{
@@ -217,4 +226,12 @@ input[type=text]:focus {
      font-size: 17px;
      font-weight: 100;
      color: #a8a8a8;
+}
+
+@media (max-width:1150px) {
+     .post{
+          width: 100vw;
+          max-width: 100vw;
+          border-radius: 0px;
+     }
 }

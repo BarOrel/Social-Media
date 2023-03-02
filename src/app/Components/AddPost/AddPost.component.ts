@@ -5,6 +5,7 @@ import { AuthService } from "src/app/Services/Auth/Auth.service";
 import { EventService } from "src/app/Services/EventService/event.service";
 import { PostService } from "src/app/Services/PostService/Post.service";
 import { UserService } from "src/app/Services/UserService/User.service";
+import Swal from "sweetalert2";
 
 
 @Component({
@@ -44,7 +45,14 @@ export class AddPostComponent implements OnInit {
 
     this.postService.AddPost(post).subscribe((data)=>{
       console.log(data)
-      
+      this.service.sendClickEvent()
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Post Published !',
+        showConfirmButton: false,
+        timer: 2000
+      })
     })
   }
 

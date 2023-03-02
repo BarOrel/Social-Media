@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" *ngIf="currentWindowWidth > 1150">
      <div class="profilerow" *ngIf="item != null" (click)="NavigateToProfile()">
           <img *ngIf="item.imgUrl != null" src="{{item.imgUrl}}" >
           <h2>{{item.fullName}}</h2>

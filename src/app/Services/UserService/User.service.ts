@@ -15,4 +15,8 @@ export class UserService {
   GetUser(){
     return this.http.get(this.BaseUrl+"?UserId="+this.authSerivce.userId());
   }
+
+  GetProfile(id:any){
+    return this.http.get(this.BaseUrl+"GetProfile/"+ id);
+  }
 }

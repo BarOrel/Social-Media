@@ -30,9 +30,14 @@
   <div class="comment-section">
     <div  *ngFor="let item of item.comments;let i = index" > 
       <div class="commentbox" *ngIf="i < index">
-      <img src="{{item.userImg}}" />
+      <img (click)="NavigateToProfile(item.comment.userId)" src="{{item.userImg
+      
+      
+
+      }}" />
       <div>
-        <h2>{{item.userFullName}}</h2>
+        <h2 class="commentUsername" (click)="NavigateToProfile(item.comment.userId)">{{item.userFullName}}</h2>
+        <h2 *ngIf="!item.userFullName">Anonymous</h2>
         <h3 >{{item.comment.content}}</h3>
         
       </div>

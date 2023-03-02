@@ -19,6 +19,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.IsLikedFunc(this.item.post.id);
+  
   }
  scrollUp(){
   window.scroll({ 

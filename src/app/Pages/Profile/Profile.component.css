@@ -2,7 +2,7 @@
      width: 100vw;
      background-color: #18191A;
      min-height: 200vh;
-     display: flex;
+     
      
 }
 
@@ -13,9 +13,51 @@
      
      
 }
-.feed{
-     margin-top: 8vh;
-}
-h1{
+.about{
+     
+     text-align: center;
      color: #fff;
 }
+.head{
+     
+     margin-top: 5vh;
+}
+h1{
+     padding-top: 1vh;
+     color: #fff;
+     text-align: center;
+     text-transform: capitalize;
+     
+}
+
+.head img{
+     border-radius: 50px;
+     max-height: 30vh;
+}
+
+.info-sec{
+     padding-top: 1vh;
+     color: #fff;
+     justify-content: space-between;
+     display: flex;
+   
+     
+}
+.info-sec h3{
+     font-weight: 200;
+     font-size: 22px;
+}
+
+.buttondiv{
+     padding-top: 3vh;
+     width:100%;
+     display: flex;
+     justify-content: center;
+}
+.buttondiv button{
+     border-radius: 10px;
+     width: 150px;
+     height: 40px;
+     font-size: 20px;
+}
+

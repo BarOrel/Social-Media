@@ -1,8 +1,28 @@
 <div class="container">
   <div class="centerDiv">
-    <div class="feed" >
-      <h1>{{id}}</h1>
-    
+    <div class="head" >
+      <img src="{{item.imageUrl}}"/>
+      <h1>{{item.fullName}}</h1>
+      
+      <div class="info-sec">
+        <h3><b>{{item.followingCounter}}</b>  Followers</h3>
+        <h3><b>{{item.followCounter}}</b>  Following</h3>
+      </div>
+      <div class="buttondiv">
+        <button>Follow</button>
+
+      </div>
     </div>
-</div>
+    
+    
+  </div>
+  <div class="centerDiv">
+    <div  >
+
+      <app-Post  *ngFor="let post of item.posts" [item]="post"></app-Post>
+ 
+    </div>
+   
+
+  </div>
 </div>
