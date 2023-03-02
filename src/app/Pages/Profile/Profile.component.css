@@ -13,6 +13,12 @@
      
      
 }
+.centerbuttomDiv{
+     width:100vw;
+     display: flex;
+     justify-content: center;
+}
+
 .about{
      
      text-align: center;
@@ -32,7 +38,7 @@ h1{
 
 .head img{
      border-radius: 50px;
-     max-height: 30vh;
+     max-height: 500px;
 }
 
 .info-sec{
@@ -61,3 +67,19 @@ h1{
      font-size: 20px;
 }
 
+@media (max-width:1150px) {
+     .head img{max-height: 300px;}
+
+     .centerDiv{
+          margin-top: 80px;
+     }
+     
+     .head{
+     
+          margin-top: 3vh;
+     }
+     .info-sec h3{
+          font-weight: 200;
+          font-size: 18px;
+     }
+}

@@ -1,0 +1,45 @@
+.TopNavbar{
+     height: 70px;
+     width: 100%;
+     position: fixed;
+     box-shadow: 1px 2px 10px #000000;
+     background-color: rgba(34, 34, 46, 0.992);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+}
+
+.main{
+ 
+}
+
+img{
+     width: 30px;
+     padding: 10px;
+     min-width: 20px;
+     object-fit: cover;
+     border: 1px solid #7c7c7c88;
+     border-radius: 20px;
+     height: 30px;
+     margin-left: 2vw;
+     margin-right: 2vw;
+  
+}
+.AccountopenMenu{
+     border-radius: 20px;
+     position: fixed;
+     background-color: white;
+     top: 80px;
+     
+     width: 80%;
+     margin-left: 10%;
+     z-index: 400;
+   
+}
+h2{
+     text-align: center;
+     border-bottom: 1px  solid #acacac;
+     padding-top: 10px;
+     padding-bottom: 10px;
+}

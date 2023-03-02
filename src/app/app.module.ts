@@ -18,6 +18,7 @@ import { DateAsAgoPipe } from './shared/date-as-ago.pipe';
 import { FormsModule } from '@angular/forms';
 import { TokenInterseptorService } from './Services/Auth/TokenInterseptor/TokenInterseptor.service';
 import { IsLoggedInServiceService } from './Services/Auth/is-logged-in-service.service';
+import { TopNavbarComponent } from './Components/TopNavbar/TopNavbar.component';
  
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { IsLoggedInServiceService } from './Services/Auth/is-logged-in-service.s
     NotificationsComponent,
     PostPageComponent,
     ProfileComponent,
-    DateAsAgoPipe
+    DateAsAgoPipe,
+    TopNavbarComponent
     
  
     

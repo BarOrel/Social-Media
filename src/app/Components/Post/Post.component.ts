@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommentClass } from 'src/app/Models/Comment';
 import { Like } from 'src/app/Models/Like';
+import { AuthService } from 'src/app/Services/Auth/Auth.service';
 import { PostService } from 'src/app/Services/PostService/Post.service';
 
 @Component({
@@ -12,14 +13,15 @@ import { PostService } from 'src/app/Services/PostService/Post.service';
 })
 export class PostComponent implements OnInit {
   @Input() item:any;
+  userId:any;
   IsLiked:any
   index:number = 3
   
-  constructor(private router:Router,private postService:PostService) { }
+  constructor(private router:Router,private postService:PostService,private authService:AuthService) { }
 
   ngOnInit() {
     this.IsLikedFunc(this.item.post.id);
-  
+    this.userId = this.authService.userId()
   }
  scrollUp(){
   window.scroll({ 
@@ -51,13 +53,17 @@ export class PostComponent implements OnInit {
  }
 
  Comment(postId:any,content:string){
-  let comment = new CommentClass()
-  comment.Content = content;
-  comment.PostId = postId;
-  
-  this.postService.Comment(comment).subscribe((data)=>{
-    this.LoadPost(postId);
-  })
+  if(content != ''){
+    let comment = new CommentClass()
+    comment.Content = content;
+    comment.PostId = postId;
+    this.postService.Comment(comment).subscribe((data)=>{
+      this.LoadPost(postId);
+
+
+
+    })
+  }
     
  
  }

@@ -1,4 +1,5 @@
 .container{
+     
      width: 100vw;
      background-color: #18191A;
      min-height: 200vh;
@@ -23,5 +24,5 @@
      .feed{
           margin-top: 1vh;
      }
-     
+  
 }

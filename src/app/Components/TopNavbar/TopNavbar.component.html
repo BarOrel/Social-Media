@@ -1,0 +1,19 @@
+<div class="TopNavbar" *ngIf="currentWindowWidth < 1150">
+  <div class="main">
+    <img src="{{user.imgUrl}}" *ngIf="user != null"  (click)="AccountMenufunc()">
+    <img src="https://www.iconpacks.net/icons/1/free-user-icon-295-thumb.png" *ngIf="user == null"  (click)="AccountMenufunc()">
+   
+    <img src="https://img.icons8.com/color/512/settings--v1.png" (click)="scrollUp(true)">
+    <img src="https://www.iconpacks.net/icons/1/free-home-icon-189-thumb.png" routerLink="" (click)="scrollUp(true)">
+    <img src="https://cdn-icons-png.flaticon.com/512/2132/2132690.png" routerLink="explore" (click)="scrollUp(false)">
+    <img src="https://cdn-icons-png.flaticon.com/512/6915/6915254.png" routerLink="notifications" (click)="scrollUp(false)">
+
+  </div>
+
+</div>
+<div class="AccountopenMenu" *ngIf="AccountMenu">
+          <h2 *ngIf="user != null" (click)="NavigateToProfile()" (click)="AccountMenufunc()" >Profile</h2>
+          <h2 *ngIf="user == null" routerLink="/login" (click)="AccountMenufunc()" >Login</h2>
+          <h2 *ngIf="user == null" routerLink="/register" (click)="AccountMenufunc()" >Register</h2>
+          <h2 *ngIf="user != null" (click)="Logout()" (click)="AccountMenufunc()">Logout</h2>
+</div>

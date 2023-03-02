@@ -17,8 +17,12 @@
     <p class="comments">{{item.commentsCounter}} Comments</p>
   </div>
   <div class="btnaction">
-    <button id="like" (click)="Like(item.post.id)" [ngStyle]="{'background-color': (IsLiked == true) ? '#73c7af' : ''}" >Like</button>
-    <button (click)="Comment(item.post.id,input.value)" (click)="input.value='' ">Coment</button>
+    <button id="like" (click)="Like(item.post.id)" [ngStyle]="{'background-color': (IsLiked == true) ? '#73c7af' : ''}" >
+      <span *ngIf="IsLiked" class="material-symbols-outlined">
+        thumb_up
+        </span>
+      Like</button>
+    <button (click)="Comment(item.post.id,input.value)" (click)="input.value='' ">Comment</button>
     <button>Share</button>
   </div>
   <div class="commentsec">
@@ -29,6 +33,7 @@
   </div>
   <div class="comment-section">
     <div  *ngFor="let item of item.comments;let i = index" > 
+      
       <div class="commentbox" *ngIf="i < index">
       <img (click)="NavigateToProfile(item.comment.userId)" src="{{item.userImg
       
@@ -36,14 +41,23 @@
 
       }}" />
       <div>
-        <h2 class="commentUsername" (click)="NavigateToProfile(item.comment.userId)">{{item.userFullName}}</h2>
+        
+          <h2 class="commentUsername" (click)="NavigateToProfile(item.comment.userId)">{{item.userFullName}}</h2>
+        
         <h2 *ngIf="!item.userFullName">Anonymous</h2>
         <h3 >{{item.comment.content}}</h3>
         
+        
       </div>
-      
-      <p class="commentTime">{{item.comment.createdTime |  dateAsAgo }}</p>
+      <div>
+        <button class="deletebtn" *ngIf="item.comment.userId == userId" >X</button>
+        <p class="commentTime">{{item.comment.createdTime |  dateAsAgo }}</p>
+
+      </div>
+        
+     
     </div>
+    
 
 
     </div>
