@@ -20,6 +20,13 @@
      margin-top: 8vh;
 }
 
+.loading{
+     margin-top: 40vh;
+     width:100%;
+     display: flex;
+     justify-content: center;
+}    
+
 @media (max-width:1150px) {
      .feed{
           margin-top: 1vh;

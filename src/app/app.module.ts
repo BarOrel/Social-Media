@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { TokenInterseptorService } from './Services/Auth/TokenInterseptor/TokenInterseptor.service';
 import { IsLoggedInServiceService } from './Services/Auth/is-logged-in-service.service';
 import { TopNavbarComponent } from './Components/TopNavbar/TopNavbar.component';
+import { LoadingComponent } from './Components/Loading/Loading.component';
  
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TopNavbarComponent } from './Components/TopNavbar/TopNavbar.component';
     PostPageComponent,
     ProfileComponent,
     DateAsAgoPipe,
-    TopNavbarComponent
+    TopNavbarComponent,
+    LoadingComponent
     
  
     

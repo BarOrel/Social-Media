@@ -11,20 +11,17 @@ import { UserService } from 'src/app/Services/UserService/User.service';
   styleUrls: ['./SideNavbar.component.css']
 })
 export class SideNavbarComponent implements OnInit {
-  public currentWindowWidth: number = 0;
-  clickeventsub: Subscription;
+  public currentWindowWidth: number = 11110;
   user:any;
   @Input() item:any;
   SettingsMenu:boolean = false
   AccountMenu:boolean = false
   constructor(private service: EventService,private userService:UserService,private router:Router,private authService:AuthService) { 
-    this.clickeventsub = this.service.getEventUser().subscribe(() => {
-      this.LoadUser()
-    });
+  
   }
 
   ngOnInit() {
-   this.LoadUser()
+   
   }
 
   scrollUp(Smooth:boolean){
@@ -45,12 +42,7 @@ export class SideNavbarComponent implements OnInit {
     }
    }
   
-   LoadUser(){
-    this.userService.GetUser().subscribe((data:any)=>{
-      console.log(data)
-      this.item = data
-    })
-   }
+  
 
    Logout(){
      this.authService.Logout()

@@ -1,7 +1,7 @@
 <div class="TopNavbar" *ngIf="currentWindowWidth < 1150">
   <div class="main">
-    <img src="{{user.imgUrl}}" *ngIf="user != null"  (click)="AccountMenufunc()">
-    <img src="https://www.iconpacks.net/icons/1/free-user-icon-295-thumb.png" *ngIf="user == null"  (click)="AccountMenufunc()">
+    <img src="{{item.imgUrl}}" *ngIf="item != null"  (click)="AccountMenufunc()">
+    <img src="https://www.iconpacks.net/icons/1/free-user-icon-295-thumb.png" *ngIf="item == null"  (click)="AccountMenufunc()">
    
     <img src="https://img.icons8.com/color/512/settings--v1.png" (click)="scrollUp(true)">
     <img src="https://www.iconpacks.net/icons/1/free-home-icon-189-thumb.png" routerLink="" (click)="scrollUp(true)">

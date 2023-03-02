@@ -10,6 +10,7 @@ import { PostService } from 'src/app/Services/PostService/Post.service';
 })
 export class HomeComponent implements OnInit {
   list:any;
+  show:boolean = false
   clickeventsub: Subscription;
   constructor(private postService:PostService,private service: EventService) { 
     this.clickeventsub = this.service.getEvent().subscribe(() => {
@@ -25,6 +26,8 @@ export class HomeComponent implements OnInit {
     this.postService.GetAll().subscribe((data:any)=>{
       this.list = data;
       console.log(this.list)
+      this.show = true
+
     })
   }
 }

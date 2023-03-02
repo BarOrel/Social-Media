@@ -1,5 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, inject, OnInit, Renderer2 } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { EventService } from './Services/EventService/event.service';
 import { UserService } from './Services/UserService/User.service';
 
 @Component({
@@ -12,10 +14,15 @@ export class AppComponent implements OnInit {
 
   public currentWindowWidth: number = 0;
   user:any;
+ clickeventsub: Subscription;
   constructor(private userService:UserService,
+    private service: EventService,
     @Inject(DOCUMENT) private documment:Document,
     private render:Renderer2
     ) {
+          this.clickeventsub = this.service.getEventUser().subscribe(() => {
+      this.LoadUser()
+    });
     
     
   }
@@ -42,6 +49,14 @@ export class AppComponent implements OnInit {
   onOutletLoaded(component:any) {
     component.someProperty = this.user;
 } 
+
+
+LoadUser(){
+  this.userService.GetUser().subscribe((data:any)=>{
+    console.log(data)
+    this.user = data
+  })
+ }
 }
 
 

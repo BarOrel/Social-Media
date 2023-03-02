@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/Services/Auth/Auth.service';
@@ -11,28 +11,21 @@ import { UserService } from 'src/app/Services/UserService/User.service';
   styleUrls: ['./TopNavbar.component.css']
 })
 export class TopNavbarComponent implements OnInit {
-  public currentWindowWidth: number = 0;
-  clickeventsub: Subscription;
+  public currentWindowWidth: number = 11110;
+  @Input() item:any;
   user:any;
 
   SettingsMenu:boolean = false
   AccountMenu:boolean = false
   constructor(private service: EventService,private userService:UserService,private router:Router,private authService:AuthService) { 
-    this.clickeventsub = this.service.getEventUser().subscribe(() => {
-      this.LoadUser()
-    });
+  
   }
 
   ngOnInit() {
-    this.LoadUser()
+  
 
   }
-  LoadUser(){
-    this.userService.GetUser().subscribe((data:any)=>{
-      console.log(data)
-      this.user = data
-    })
-   }
+ 
 
    scrollUp(Smooth:boolean){
  

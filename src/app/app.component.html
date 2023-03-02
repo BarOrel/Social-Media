@@ -1,4 +1,4 @@
-<app-TopNavbar ></app-TopNavbar>
+<app-TopNavbar [item]="user" ></app-TopNavbar>
 <router-outlet class="main" (activate)="onOutletLoaded($event)"></router-outlet>
 <app-FriendsNavbar [item]="user" class="friedsnavbar"></app-FriendsNavbar>
 <app-SideNavbar [item]="user" class="sidebar"></app-SideNavbar>
