@@ -11,7 +11,7 @@ import { UserService } from 'src/app/Services/UserService/User.service';
 export class ProfileComponent implements OnInit {
   id: any ;
   item:any;
-
+  IsLoaded:boolean = false;
   constructor(private route: ActivatedRoute,private userServicd:UserService) { }
 
   ngOnInit() {
@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit {
       this.userServicd.GetProfile(this.id).subscribe((data:any)=>{
         console.log(data)
         this.item = data
+        this.IsLoaded = true
       })
 
       

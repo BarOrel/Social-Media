@@ -20,6 +20,7 @@ import { TokenInterseptorService } from './Services/Auth/TokenInterseptor/TokenI
 import { IsLoggedInServiceService } from './Services/Auth/is-logged-in-service.service';
 import { TopNavbarComponent } from './Components/TopNavbar/TopNavbar.component';
 import { LoadingComponent } from './Components/Loading/Loading.component';
+import { PostGridComponent } from './Components/PostGrid/PostGrid.component';
  
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { LoadingComponent } from './Components/Loading/Loading.component';
     ProfileComponent,
     DateAsAgoPipe,
     TopNavbarComponent,
-    LoadingComponent
+    LoadingComponent,
+    PostGridComponent
     
  
     

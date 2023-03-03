@@ -18,11 +18,11 @@ export class TopNavbarComponent implements OnInit {
   SettingsMenu:boolean = false
   AccountMenu:boolean = false
   constructor(private service: EventService,private userService:UserService,private router:Router,private authService:AuthService) { 
-  
+    
   }
 
   ngOnInit() {
-  
+    this.currentWindowWidth = window.innerWidth
 
   }
  

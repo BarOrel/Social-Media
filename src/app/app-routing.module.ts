@@ -7,10 +7,11 @@ import { NotificationsComponent } from './Pages/Notifications/Notifications.comp
 import { PostPageComponent } from './Pages/PostPage/PostPage.component';
 import { ProfileComponent } from './Pages/Profile/Profile.component';
 import { RegisterComponent } from './Pages/Register/Register.component';
+import { IsLoggedInServiceService } from './Services/Auth/is-logged-in-service.service';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
-  { path: "home", component: HomeComponent },
+  { path: "home", component: HomeComponent ,canActivate:[IsLoggedInServiceService]  },
   { path: "explore", component: ExploreComponent },
   { path: "notifications", component: NotificationsComponent },
   { path: "profile/:id", component: ProfileComponent },

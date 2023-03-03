@@ -8,7 +8,7 @@
           <button class="headbtn">...</button>
           <button class="headbtn">X</button>
   </div>
-
+<div style="cursor: pointer;" (click)="NavigateToPost(item.post.id)" > 
   <p>{{item.post.content}}</p>
   <img *ngIf="item.post.imgUrl != 'string'" (click)="NavigateToPost(item.post.id)" src="{{item.post.imgUrl}}">
   
@@ -16,6 +16,8 @@
     <p class="likes">{{item.likesCounter}} Likes</p>
     <p class="comments">{{item.commentsCounter}} Comments</p>
   </div>
+
+</div>
   <div class="btnaction">
     <button id="like" (click)="Like(item.post.id)" [ngStyle]="{'background-color': (IsLiked == true) ? '#73c7af' : ''}" >
       <span *ngIf="IsLiked" class="material-symbols-outlined">

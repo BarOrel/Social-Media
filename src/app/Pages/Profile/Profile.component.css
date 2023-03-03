@@ -1,8 +1,8 @@
 .container{
      width: 100vw;
      background-color: #18191A;
-     min-height: 200vh;
-     
+     padding-bottom: 5vh;
+     min-height: 100vh;
      
 }
 
@@ -53,7 +53,10 @@ h1{
      font-weight: 200;
      font-size: 22px;
 }
+.loading{
+     position: fixed;
 
+}
 .buttondiv{
      padding-top: 3vh;
      width:100%;

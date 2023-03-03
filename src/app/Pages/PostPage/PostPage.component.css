@@ -1,9 +1,9 @@
 .container{
      width: 100vw;
      background-color: #18191A;
-     min-height: 200vh;
+     min-height: 100vh;
      display: flex;
-     
+     padding-bottom: 10vh;
 }
 
 .centerDiv{
@@ -14,8 +14,20 @@
      
 }
 .feed{
-     margin-top: 8vh;
+     margin-top: 4vh;
 }
 h1{
      color: #fff;
+}
+
+.loading{
+     position: fixed;
+
+}
+
+@media (max-width:1150px) {
+     .feed{
+          margin-top: 9vh;
+     }
+  
 }

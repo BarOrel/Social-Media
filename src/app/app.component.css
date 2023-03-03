@@ -1,22 +1,23 @@
 .main{
+     
 }
 
 .sidebar{
-     right: 10vw;
+     right: 1vw;
      top: 8vh;
      position: fixed;
      z-index: 100;
 }
 
 .friedsnavbar{
-     left: 10vw;
+     left: 1vw;
      top: 8vh;
      position: fixed;
 }
 .TopNavbar{
      height: 50px;
      width: 100%;
-     position: fixed;
+     
      background-color: #fff;
      z-index: 100;
 }

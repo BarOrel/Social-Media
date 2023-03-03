@@ -17,7 +17,7 @@ export class IsLoggedInServiceService implements CanActivate {
 
   else
   { 
-    this.router.navigate(['']);
+    this.router.navigate(['explore']);
     return false 
   }   
 

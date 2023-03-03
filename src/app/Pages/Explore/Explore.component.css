@@ -1,7 +1,7 @@
 .container{
      width: 100vw;
      background-color: #18191A;
-     min-height: 200vh;
+     min-height: 100vh;
      display: flex;
      
 }
@@ -14,8 +14,31 @@
      
 }
 .feed{
-     margin-top: 8vh;
+     margin-top: 10vh;
 }
 h1{
      color: #fff;
+     text-align: center;
+     font-size: 37px;
 }
+
+.gridposts{
+     max-width: 1200px;
+     margin: 0 auto;
+     display: grid;
+     gap: 1rem;
+     grid-template-columns: repeat(3, 1fr);
+}
+
+.loading{
+     position: fixed;
+    
+}
+
+
+   @media (max-width: 950px) {
+     .gridposts { grid-template-columns: repeat(2, 1fr); }
+   }
+   @media (max-width: 700px) {
+     .gridposts { grid-template-columns: repeat(1, 1fr); }
+   }

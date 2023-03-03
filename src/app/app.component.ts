@@ -20,17 +20,14 @@ export class AppComponent implements OnInit {
     @Inject(DOCUMENT) private documment:Document,
     private render:Renderer2
     ) {
-          this.clickeventsub = this.service.getEventUser().subscribe(() => {
+      this.clickeventsub = this.service.getEventUser().subscribe(() => {
       this.LoadUser()
     });
     
     
   }
    ngOnInit() {
-    //  this.userService.GetUser().subscribe((data:any)=>{
-    //   console.log(data)
-    //   this.user = data
-    // })
+    this.LoadUser()
   }
   ScrollTop(){
     window.scroll({ 

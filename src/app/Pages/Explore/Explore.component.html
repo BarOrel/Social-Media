@@ -1,8 +1,12 @@
-<div class="container">
+<app-Loading *ngIf="!IsLoaded" class="loading"></app-Loading>
+<div class="container" >
   <div class="centerDiv">
     <div class="feed" >
       <h1>Explore</h1>
-    
+      <div class="gridposts">
+        <app-PostGrid *ngFor="let post of list" [item]="post" class="post" ></app-PostGrid>
+
+      </div>
     </div>
 </div>
 </div>

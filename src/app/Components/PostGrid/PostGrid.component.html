@@ -1,0 +1,29 @@
+<div class="post" >
+  <div class="top">
+    <img (click)="NavigateToProfile(item.userId)" *ngIf="item.userImg != null" src="{{item.userImg}}">
+    <div class="topHeadline">
+      <h2 (click)="NavigateToProfile(item.userId)">{{item.fullName}}</h2>
+      <p>{{item.post.createdTime | dateAsAgo}}</p>
+    </div>
+          <button class="headbtn">...</button>
+          <button class="headbtn">X</button>
+  </div>
+<div style="cursor: pointer;" (click)="NavigateToPost(item.post.id)" >
+  <p>{{item.post.content}}</p>
+  <img *ngIf="item.post.imgUrl != 'string'" (click)="NavigateToPost(item.post.id)" src="{{item.post.imgUrl}}">
+  
+
+  <div class="postinfo">
+    <p class="likes">{{item.likesCounter}} Likes</p>
+    <p class="comments">{{item.commentsCounter}} Comments</p>
+  </div>
+
+</div>
+
+
+
+
+ 
+ 
+ 
+</div>

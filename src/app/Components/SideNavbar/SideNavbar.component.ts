@@ -21,7 +21,7 @@ export class SideNavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-   
+    this.currentWindowWidth = window.innerWidth
   }
 
   scrollUp(Smooth:boolean){

@@ -2,9 +2,9 @@
      
      width: 100vw;
      background-color: #18191A;
-     min-height: 200vh;
+     min-height: 100vh;
      display: flex;
-     
+     padding-bottom: 5vh;
 }
 .comment{
      
@@ -19,13 +19,11 @@
 .feed{
      margin-top: 8vh;
 }
-
 .loading{
-     margin-top: 40vh;
-     width:100%;
-     display: flex;
-     justify-content: center;
-}    
+     position: fixed;
+
+}
+  
 
 @media (max-width:1150px) {
      .feed{
