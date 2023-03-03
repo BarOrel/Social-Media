@@ -35,7 +35,7 @@ img{
      margin-top: 0px;
      max-height: 6vh;
      border-radius: 50px;
-     
+     max-width: 50px;
 }
 .row h2 {
      color: #fff;
