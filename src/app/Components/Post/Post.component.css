@@ -7,7 +7,9 @@
      margin-top: 3vh;
      min-width: 25vw;
 }
-
+span{
+     overflow: hidden;
+}
 .top{
     display: flex; 
     padding-bottom: 20px;
@@ -153,7 +155,7 @@ input[type=text]:focus {
    .btnaction button{
      color: #fff;
      background-color: transparent;
-     font-size: 25px;
+     font-size: 17px;
      border-radius: 30px;
      border: 1px solid #fff;
      -webkit-transition: 0.5s;
@@ -180,7 +182,8 @@ input[type=text]:focus {
      border-radius: 40px;
      margin: 0px;
      max-height: 50px;
-     max-width: 70px;
+     max-width: 46px;
+     object-fit: cover;
    }
 
 
@@ -234,14 +237,23 @@ input[type=text]:focus {
      color: #a8a8a8;
 }
 .deletebtn{
-     border-color: #fff;
+     
      color: #fff;
-     background-color: #99999994;
+     background-color: transparent;
      float: right;
-     height: 25px;
-     width: 20px;
-     border-radius: 10px;
      font-size: 15px;
+     border-radius: 10px;
+     border: 0px;
+}
+.headbtn:hover {
+     color: #b1b1b1a4;
+
+}
+.headbtn {
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
+     cursor: pointer;
+
 }
 
 
@@ -253,6 +265,10 @@ input[type=text]:focus {
           border-radius: 0px;
      }
 
+     .comment-section h2{font-size: 16px;}
+     .comment-section h3{font-size: 15px;}
+     .comment-section p{font-size: 14px;}
+     .comment-section{padding-bottom: 17px;}
      .top img{margin-left: 15px;}
 
      .topHeadline h2{font-size: 20px;}

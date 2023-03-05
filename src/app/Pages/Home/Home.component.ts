@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   LoadPage(){
-    this.postService.GetAll().subscribe((data:any)=>{
+    this.postService.GetAllFollowing().subscribe((data:any)=>{
       this.list = data;
       console.log(this.list)
       this.IsLoaded = true

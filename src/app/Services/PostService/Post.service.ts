@@ -16,6 +16,9 @@ export class PostService {
   GetAll(){
     return this.http.get(this.BaseUrl);
   }
+  GetAllFollowing(){
+    return this.http.get(this.BaseUrl+'GetFollowingPosts/'+ this.authSerivce.userId());
+  }
   GetPostById(id:any){
     return this.http.get(this.BaseUrl+'GetById/'+ id);
   }

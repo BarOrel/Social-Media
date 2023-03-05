@@ -13,6 +13,7 @@
 </div>
 <div class="AccountopenMenu" *ngIf="AccountMenu">
           <h2 *ngIf="item != null" (click)="NavigateToProfile()" (click)="AccountMenufunc()" >Profile</h2>
+          <h2 *ngIf="item != null"  (click)="AccountMenufunc()" >Account Details</h2>
           <h2 *ngIf="item == null" routerLink="/login" (click)="AccountMenufunc()" >Login</h2>
           <h2 *ngIf="item == null" routerLink="/register" (click)="AccountMenufunc()" >Register</h2>
           <h2 *ngIf="item != null" (click)="Logout()" (click)="AccountMenufunc()">Logout</h2>

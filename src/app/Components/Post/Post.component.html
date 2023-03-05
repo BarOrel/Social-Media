@@ -5,12 +5,16 @@
       <h2 (click)="NavigateToProfile(item.userId)">{{item.fullName}}</h2>
       <p>{{item.post.createdTime | dateAsAgo}}</p>
     </div>
-          <button class="headbtn">...</button>
-          <button class="headbtn" *ngIf="item.userId == userId">X</button>
+          <button class="headbtn"><span class="material-symbols-outlined">
+            more_vert
+            </span></button>
+          <button class="headbtn" *ngIf="item.userId == userId"><span class="material-symbols-outlined">
+            close
+            </span></button>
   </div>
 <div style="cursor: pointer;" (click)="NavigateToPost(item.post.id)" > 
   <p>{{item.post.content}}</p>
-  <img *ngIf="item.post.imgUrl != 'string'" (click)="NavigateToPost(item.post.id)" src="{{item.post.imgUrl}}">
+  <img *ngIf="item.post.imgUrl != 'string'"  src="{{item.post.imgUrl}}">
   
   <div class="postinfo">
     <p class="likes">{{item.likesCounter}} Likes</p>
@@ -20,12 +24,27 @@
 </div>
   <div class="btnaction">
     <button id="like" (click)="Like(item.post.id)" [ngStyle]="{'background-color': (IsLiked == true) ? '#73c7af' : ''}" >
-      <span *ngIf="IsLiked" class="material-symbols-outlined">
+      <span *ngIf="!IsLiked" class="material-symbols-outlined">
+        thumb_up
+        </span>
+      <span *ngIf="IsLiked" id="Like" class="material-symbols-outlined"><style>
+        #Like {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 48
+        }
+        </style>
         thumb_up
         </span>
       Like</button>
-    <button (click)="Comment(item.post.id,input.value)" (click)="input.value='' ">Comment</button>
-    <button>Share</button>
+    <button (click)="Comment(item.post.id,input.value)" (click)="input.value='' "><span class="material-symbols-outlined">
+      mode_comment
+      </span> Comment</button>
+    <button><span class="material-symbols-outlined">
+      share
+      </span> Share</button>
   </div>
   <div class="commentsec">
     
@@ -52,7 +71,9 @@
         
       </div>
       <div>
-        <button class="deletebtn" *ngIf="item.comment.userId == userId" >X</button>
+        <button class="deletebtn" *ngIf="item.comment.userId == userId" ><span class="material-symbols-outlined">
+          delete
+          </span></button>
         <p class="commentTime">{{item.comment.createdTime |  dateAsAgo }}</p>
 
       </div>
