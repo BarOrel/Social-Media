@@ -2,7 +2,28 @@
   <div class="centerDiv">
     <div class="feed" >
       <h1>Notifications</h1>
-    
+      <div class="Notifications-section">
+        <div style="padding: 80px;">
+          <div class="Notifications-Row" *ngFor="let item of list" >
+            <div style="display: flex;">
+              <img class="person-img" src="{{item.userImg}}" (click)="NavigateToProfile(item.notification.notifierId)">
+              <div style="display: flex;">
+                <h2 (click)="NavigateToProfile(item.notification.notifierId)">{{item.username}}</h2>
+                <h3 *ngIf="item.notification.type == 0" (click)="NavigateToPost(item.post.post.id)" >Liked Your Post</h3>
+                <h3 *ngIf="item.notification.type == 1" (click)="NavigateToPost(item.post.post.id)">Comment</h3>
+                <h3 *ngIf="item.notification.type == 2" (click)="NavigateToPost(item.post.post.id)">Share</h3>
+                
+              </div>
+            </div>
+            
+            <img class="post-img" (click)="NavigateToPost(item.post.post.id)" src="{{item.post.post.imgUrl}}" *ngIf="item.post.post.imgUrl != null">
+            
+          </div>
+
+        </div>
+
+
+      </div>
     </div>
 </div>
 </div>

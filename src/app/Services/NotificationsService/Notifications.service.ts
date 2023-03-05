@@ -6,10 +6,13 @@ import { AuthService } from '../Auth/Auth.service';
   providedIn: 'root'
 })
 export class NotificationsService {
-  BaseUrl = 'https://localhost:7218/api/User/'
+  BaseUrl = 'https://localhost:7218/api/Notification/'
 constructor(private http:HttpClient,private authSerivce:AuthService) { }
 
-
+  
+GetAll(){
+  return this.http.get(this.BaseUrl+this.authSerivce.userId());
+}
 
 
 }

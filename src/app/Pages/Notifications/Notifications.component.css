@@ -19,6 +19,64 @@
 }
 
 h1{
+     text-align: center;
      font-size: 37px;
      color: #fff;
+}
+
+.Notifications-section{
+     border-radius: 15px;
+     margin-top: 5vh;
+     background-color: rgb(46, 46, 95);
+     width: 40vw;
+     min-height:30vh ;
+}
+.Notifications-Row{
+     background-color: #ffffff31;
+     border-radius: 15px;
+     margin-top: 10px;
+     min-width: 25vw;
+     height: 70px;
+     border: 1px solid;
+    
+ display: flex;
+}
+h2{
+     margin-top: 10px;
+     margin-left: 10px;
+     color: #ffffffd8;
+     font-size: 18px;
+     font-weight: 600;
+     text-transform: capitalize;
+     cursor: pointer;
+}
+h3{
+     margin-top: 10px;
+     margin-left: 10px;
+     color: #fff;
+     font-size: 18px;
+     font-weight: 200;
+     cursor: pointer;
+
+}
+.person-img{
+     width: 50px;
+     object-fit: cover;
+     height: 60px;
+     cursor: pointer;
+     
+     margin-left: 10px;
+     margin-top: 5px;
+     border-radius: 20px;
+}
+.post-img{
+     margin-left: auto;
+     order: 2;
+     margin-top: 5px;
+     border-radius: 20px;
+     width: 50px;
+     object-fit: cover;
+     height: 60px;
+     cursor: pointer;
+     
 }
