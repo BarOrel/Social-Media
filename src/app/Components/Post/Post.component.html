@@ -23,7 +23,7 @@
 
 </div>
   <div class="btnaction">
-    <button id="like" (click)="Like(item.post.id)" [ngStyle]="{'background-color': (IsLiked == true) ? '#73c7af' : ''}" >
+    <button id="like" (click)="Like(item.post.id)" [ngStyle]="{'color': (IsLiked == true) ? '#73c7af' : ''}" >
       <span *ngIf="!IsLiked" class="material-symbols-outlined">
         thumb_up
         </span>
