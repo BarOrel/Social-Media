@@ -9,12 +9,14 @@ import { NotificationsService } from 'src/app/Services/NotificationsService/Noti
 })
 export class NotificationsComponent implements OnInit {
   list:any
+  IsLoaded:boolean = false
   constructor(private notificationService:NotificationsService,private router:Router) { }
 
   ngOnInit() {
     this.notificationService.GetAll().subscribe((data)=>{
       console.log(data)
       this.list = data
+      this.IsLoaded = true
     })
   }
 

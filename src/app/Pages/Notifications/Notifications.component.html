@@ -1,28 +1,28 @@
-<div class="container">
-  <div class="centerDiv">
+<app-Loading *ngIf="!IsLoaded" class="loading"></app-Loading>
+<div class="container"  >
+  <div class="centerDiv" *ngIf="IsLoaded" >
     <div class="feed" >
       <h1>Notifications</h1>
       <div class="Notifications-section">
-        <div style="padding: 80px;">
-          <div class="Notifications-Row" *ngFor="let item of list" >
-            <div style="display: flex;">
-              <img class="person-img" src="{{item.userImg}}" (click)="NavigateToProfile(item.notification.notifierId)">
-              <div style="display: flex;">
-                <h2 (click)="NavigateToProfile(item.notification.notifierId)">{{item.username}}</h2>
-                <h3 *ngIf="item.notification.type == 0" (click)="NavigateToPost(item.post.post.id)" >Liked Your Post</h3>
-                <h3 *ngIf="item.notification.type == 1" (click)="NavigateToPost(item.post.post.id)">Comment</h3>
-                <h3 *ngIf="item.notification.type == 2" (click)="NavigateToPost(item.post.post.id)">Share</h3>
-                
+        <div class="rows" >
+          <div class="Notifications-Row" *ngFor="let item of list" (click)="NavigateToPost(item.post.post.id)" >
+            <img class="person-img" src="{{item.userImg}}" (click)="NavigateToProfile(item.notification.notifierId)">
+            <div >
+              <div>
+                <div style="display: flex;">
+                  <h2 (click)="NavigateToProfile(item.notification.notifierId)">{{item.username}}</h2>
+                  <h3 *ngIf="item.notification.type == 0" (click)="NavigateToPost(item.post.post.id)" >Liked your post</h3>
+                  <h3 *ngIf="item.notification.type == 1" (click)="NavigateToPost(item.post.post.id)">Comment on your post</h3>
+                  <h3 *ngIf="item.notification.type == 2" (click)="NavigateToPost(item.post.post.id)">Share Your Post</h3>
+                  
+                </div>
+
               </div>
-            </div>
-            
-            <img class="post-img" (click)="NavigateToPost(item.post.post.id)" src="{{item.post.post.imgUrl}}" *ngIf="item.post.post.imgUrl != null">
-            
+              <h3 style="color: rgb(206, 206, 206);" >{{item.notification.createdTime | dateAsAgo}}</h3>
+            </div>  
+            <img class="post-img"  src="{{item.post.post.imgUrl}}" *ngIf="item.post.post.imgUrl != null">
           </div>
-
         </div>
-
-
       </div>
     </div>
 </div>

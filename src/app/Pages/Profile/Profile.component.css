@@ -39,6 +39,7 @@ h1{
 .head img{
      border-radius: 50px;
      max-height: 500px;
+     max-width: 100vw;
 }
 
 .info-sec{
