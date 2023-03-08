@@ -53,7 +53,8 @@ span{
 .top img{
      margin-left: 30px;
      margin-top: 20px;
-     height: 90px ;
+     object-fit: cover;
+     height: 80px ;
      width: 70px;
      cursor: pointer;
      border-radius: 50px;

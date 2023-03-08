@@ -80,7 +80,7 @@ export class PostComponent implements OnInit {
   }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
-      Swal.fire('Changes are not saved', '', 'info')
+    
     } else if (result.isDenied) {
       Swal.fire('Deleted!', '', 'success')
       this.postService.DeletePost(id).subscribe((data)=>{

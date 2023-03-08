@@ -6,8 +6,8 @@
       <p>{{item.post.createdTime | dateAsAgo}}</p>
     </div>
           <button class="headbtn">...</button>
-          <button class="headbtn">X</button>
-  </div>
+          <button class="headbtn" (click)="DeletePost(item.post.id)">X</button>
+  </div>  
 <div style="cursor: pointer;" (click)="NavigateToPost(item.post.id)" >
   <p>{{item.post.content}}</p>
   <img *ngIf="item.post.imgUrl != 'string'" (click)="NavigateToPost(item.post.id)" src="{{item.post.imgUrl}}">
