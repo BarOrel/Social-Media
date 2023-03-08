@@ -22,10 +22,13 @@ export class PostService {
   GetPostById(id:any){
     return this.http.get(this.BaseUrl+'GetById/'+ id);
   }
-
   
   AddPost(post:any){
     return this.http.post(this.BaseUrl, post);
+  }
+
+  DeletePost(id:any){
+    return this.http.delete(this.BaseUrl + id);
   }
   
   

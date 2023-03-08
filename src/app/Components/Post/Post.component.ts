@@ -4,7 +4,9 @@ import { Router } from '@angular/router';
 import { CommentClass } from 'src/app/Models/Comment';
 import { Like } from 'src/app/Models/Like';
 import { AuthService } from 'src/app/Services/Auth/Auth.service';
+import { EventService } from 'src/app/Services/EventService/event.service';
 import { PostService } from 'src/app/Services/PostService/Post.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-Post',
@@ -13,11 +15,12 @@ import { PostService } from 'src/app/Services/PostService/Post.service';
 })
 export class PostComponent implements OnInit {
   @Input() item:any;
+  Menu:boolean = false;
   userId:any;
   IsLiked:any
   index:number = 3
   
-  constructor(private router:Router,private postService:PostService,private authService:AuthService) { }
+  constructor(private router:Router,private postService:PostService,private authService:AuthService,private eventService:EventService) { }
 
   ngOnInit() {
     this.IsLikedFunc(this.item.post.id);
@@ -64,8 +67,35 @@ export class PostComponent implements OnInit {
 
     })
   }
+ }
+
+ DeletePost(id:any){
+  Swal.fire({
+    title: 'Do you want to delete the post?',
+    icon : 'question',
+    showDenyButton: true,
     
- 
+    confirmButtonText: 'Cancel',
+    denyButtonText: `Delete`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      Swal.fire('Changes are not saved', '', 'info')
+    } else if (result.isDenied) {
+      Swal.fire('Deleted!', '', 'success')
+      this.postService.DeletePost(id).subscribe((data)=>{
+        console.log(data)
+        this.eventService.sendClickEvent();
+      })
+      
+    }
+  })
+ }
+
+ OpenMenu(){
+    if(this.Menu)
+     {this.Menu = false}
+    else{ this.Menu = true} 
  }
 
   NavigateToProfile(user:any){
