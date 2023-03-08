@@ -5,12 +5,22 @@
       <h2 (click)="NavigateToProfile(item.userId)">{{item.fullName}}</h2>
       <p>{{item.post.createdTime | dateAsAgo}}</p>
     </div>
-          <button class="headbtn"><span class="material-symbols-outlined">
-            more_vert
-            </span></button>
-          <button class="headbtn" *ngIf="item.userId == userId"><span class="material-symbols-outlined">
-            close
-            </span></button>
+    <div>
+      <div style="display: flex;">
+        <button class="headbtn" (click)="OpenMenu()"><span class="material-symbols-outlined">
+          more_vert
+          </span></button>
+        <button (click)="DeletePost(item.post.id)" class="headbtn" *ngIf="item.userId == userId"><span class="material-symbols-outlined">
+          close
+          </span></button>
+  
+      </div>
+              <div class="post-menu" *ngIf="Menu">
+                <a>Save</a>
+                <a>Edit</a>
+              </div>
+
+    </div>
   </div>
 <div style="cursor: pointer;" (click)="NavigateToPost(item.post.id)" > 
   <p>{{item.post.content}}</p>

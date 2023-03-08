@@ -31,6 +31,15 @@ span{
 color: #9b9b9b;
 
 }
+
+
+.post-menu{
+     background-color: #fff;
+     height: 40px;
+     border-radius: 10px;
+     
+}
+
 .topHeadline p{
      padding-left: 0px;
      margin-left: 20px;
@@ -44,8 +53,8 @@ span{
 .top img{
      margin-left: 30px;
      margin-top: 20px;
-     max-height: 90px ;
-     max-width: 70px;
+     height: 90px ;
+     width: 70px;
      cursor: pointer;
      border-radius: 50px;
      -webkit-transition: 0.5s;
