@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   UserId:any;
   isFollowed:any;
   clickeventsub: Subscription;
-  constructor(private route: ActivatedRoute,private service: EventService,private userServicd:UserService,private authService:AuthService) {
+  constructor(private route: ActivatedRoute,private service: EventService,private userServicd:UserService,private authService:AuthService,private event:EventService) {
     this.clickeventsub = this.service.getEvent().subscribe(() => {
       this.LoadProfile()
     });
@@ -35,6 +35,7 @@ export class ProfileComponent implements OnInit {
 
   Follow(Following:any){
       this.userServicd.Follow(Following).subscribe((data)=>{
+        this.event.sendClickEventUser()
       this.LoadProfile()
   })
   }

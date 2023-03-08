@@ -5,6 +5,7 @@
       <h1>Notifications</h1>
       <div class="Notifications-section">
         <div class="rows" >
+          <h1 *ngIf="list.length == 0">There Is no Notifications</h1>
           <div class="Notifications-Row" *ngFor="let item of list" (click)="NavigateToPost(item.post.post.id)" >
             <img class="person-img" src="{{item.userImg}}" (click)="NavigateToProfile(item.notification.notifierId)">
             <div >

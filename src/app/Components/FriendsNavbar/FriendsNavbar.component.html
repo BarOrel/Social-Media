@@ -1,1 +1,7 @@
-<!-- <div class="main" *ngIf="IsLoggedIn && currentWindowWidth > 1150"></div> -->
+<div class="main" *ngIf="IsLoggedIn && currentWindowWidth > 1150">
+     <h2 class="title">Following</h2>
+     <div class="friend-row" *ngFor="let item of FollowingList" (click)="NavigateToProfile(item.userId)">
+          <img src="{{item.imgUrl}}">
+          <h3>{{item.fullname}}</h3>
+     </div>
+</div>

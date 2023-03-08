@@ -1,7 +1,7 @@
 .main{
      background-color: rgb(46, 46, 95);
      width: 28vh;
-     height: 50vh;
+    
      border-radius: 20px;
      min-width: 150px;
      padding-bottom: 10px;
@@ -12,4 +12,36 @@
    
 }
 
+.friend-row{
+     display: flex;
+     margin-top: 7px;
+     padding-top:5px;
+     padding-bottom:5px;
+     border-radius:10px ;
+     cursor: pointer;
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
+}
+.friend-row:hover{
+     background-color: #afafaf1e;
+}
+.title{
+     margin-top: 1vh;
+     color: #fff;
+     margin-left: 30px;
+     padding-bottom: 10px;
+}
+h3{color: #fff;
+text-transform: capitalize;
+margin-top:6px;
+margin-left: 13px;
+}
 
+img{
+    object-fit: cover; 
+     margin-left: 30px;
+     border-radius: 30px;
+     height: 40px;
+     width: 40px;
+     
+}

@@ -20,6 +20,9 @@ export class UserService {
   GetProfile(id:any){
     return this.http.get(this.BaseUrl+"GetProfile/"+ id);
   }
+  GetFollowing(){
+    return this.http.get(this.BaseUrl+"Following/"+ this.authSerivce.userId());
+  }
 
   IsFollowed(id:any){
     let dto = new FollowDTO();
