@@ -85,9 +85,6 @@ export class PostGridComponent implements OnInit {
     comment.PostId = postId;
     this.postService.Comment(comment).subscribe((data)=>{
       this.LoadPost(postId);
-
-
-
     })
   }
  }

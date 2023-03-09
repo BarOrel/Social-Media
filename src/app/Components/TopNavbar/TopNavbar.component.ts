@@ -77,7 +77,7 @@ export class TopNavbarComponent implements OnInit {
   @HostListener('window:resize')
   onResize() {
     this.currentWindowWidth = window.innerWidth
-    console.log(this.currentWindowWidth)
+
   }
   
 }

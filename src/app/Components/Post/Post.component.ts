@@ -62,9 +62,6 @@ export class PostComponent implements OnInit {
     comment.PostId = postId;
     this.postService.Comment(comment).subscribe((data)=>{
       this.LoadPost(postId);
-
-
-
     })
   }
  }

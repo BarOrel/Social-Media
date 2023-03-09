@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
   @HostListener('window:resize')
   onResize() {
     this.currentWindowWidth = window.innerWidth
-    console.log(this.currentWindowWidth)
+ 
   }
   
   onOutletLoaded(component:any) {
