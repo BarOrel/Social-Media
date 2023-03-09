@@ -14,7 +14,7 @@
      
 }
 .feed{
-       margin-top: 10vh;
+       margin-top: 100px;
 
 }
 
@@ -100,6 +100,7 @@ h3{
           padding: 30px;
      }
 
+     .no-notification{font-size: 25px;}
 }
 
 @media (max-width:850px){
