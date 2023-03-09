@@ -9,6 +9,7 @@ import { AuthService } from '../Auth/Auth.service';
 export class UserService {
 
   BaseUrl = 'https://localhost:7218/api/User/'
+  FollowBaseUrl = 'https://localhost:7218/api/Follow/'
 
   constructor(private http:HttpClient,private authSerivce:AuthService) { }
   
@@ -28,14 +29,14 @@ export class UserService {
     let dto = new FollowDTO();
     dto.Following = id;
     dto.UserId = this.authSerivce.userId()
-    return this.http.post(this.BaseUrl+"IsFollow/",dto);
+    return this.http.post(this.FollowBaseUrl+"IsFollow/",dto);
   }
 
   Follow(id:any){
     let dto = new FollowDTO();
     dto.Following = id;
     dto.UserId = this.authSerivce.userId()
-    return this.http.post(this.BaseUrl+"Follow/", dto);
+    return this.http.post(this.FollowBaseUrl+"Follow/", dto);
   }
 
 
