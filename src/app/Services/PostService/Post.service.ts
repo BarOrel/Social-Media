@@ -9,6 +9,7 @@ import { AuthService } from '../Auth/Auth.service';
 export class PostService {
 
   BaseUrl = 'https://localhost:7218/api/Post/'
+  CommentBaseUrl = 'https://localhost:7218/api/Comment/'
 
   constructor(private http:HttpClient,private authSerivce:AuthService) { }
   
@@ -31,21 +32,12 @@ export class PostService {
     return this.http.delete(this.BaseUrl + id);
   }
   
-  
-  
-  
-  
   Comment(comment:any){
     comment.UserId =  this.authSerivce.userId()
 
-    return this.http.post(this.BaseUrl+"Comment" ,comment);
+    return this.http.post(this.CommentBaseUrl ,comment);
   }
 
-  
-  
-  
-  
-  
   Like(postid:any){
     let like = new Like
     like.PostId = postid
