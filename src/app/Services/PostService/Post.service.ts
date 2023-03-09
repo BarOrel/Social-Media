@@ -10,6 +10,7 @@ export class PostService {
 
   BaseUrl = 'https://localhost:7218/api/Post/'
   CommentBaseUrl = 'https://localhost:7218/api/Comment/'
+  LikeBaseUrl = 'https://localhost:7218/api/Like/'
 
   constructor(private http:HttpClient,private authSerivce:AuthService) { }
   
@@ -43,13 +44,13 @@ export class PostService {
     like.PostId = postid
     like.UserId = this.authSerivce.userId()
 
-    return this.http.post(this.BaseUrl+"Like" , like);
+    return this.http.post(this.LikeBaseUrl , like);
   }
 
   IsLike(id:any){
     let like = new Like()
     like.PostId = id
     like.UserId = this.authSerivce.userId()
-    return this.http.post(this.BaseUrl+"Like/IsLiked" , like);
+    return this.http.post(this.LikeBaseUrl+"IsLiked" , like);
   }
 }
