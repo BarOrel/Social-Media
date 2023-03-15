@@ -47,6 +47,7 @@ export class PostService {
     return this.http.post(this.LikeBaseUrl , like);
   }
 
+  
   IsLike(id:any){
     let like = new Like()
     like.PostId = id
