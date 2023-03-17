@@ -10,7 +10,7 @@ import { RegisterComponent } from './Pages/Register/Register.component';
 import { IsLoggedInServiceService } from './Services/Auth/is-logged-in-service.service';
 
 const routes: Routes = [
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '',   redirectTo: '/home', pathMatch: 'full'  },
   { path: "home", component: HomeComponent ,canActivate:[IsLoggedInServiceService]  },
   { path: "explore", component: ExploreComponent },
   { path: "notifications", component: NotificationsComponent ,canActivate:[IsLoggedInServiceService]  },
