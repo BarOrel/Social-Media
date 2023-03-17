@@ -2685,11 +2685,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\baror\\source\\repos\\SocialMedia\\SocialMedia_Server\\SocialMedia_API\\SocialMedia_API.csproj",
+      "projectUniqueName": "C:\\Users\\baror\\OneDrive\\Documents\\WEBPROJECTS\\Git\\Social-Media\\SocialMedia_Server\\SocialMedia_API\\SocialMedia_API.csproj",
       "projectName": "SocialMedia_API",
-      "projectPath": "C:\\Users\\baror\\source\\repos\\SocialMedia\\SocialMedia_Server\\SocialMedia_API\\SocialMedia_API.csproj",
+      "projectPath": "C:\\Users\\baror\\OneDrive\\Documents\\WEBPROJECTS\\Git\\Social-Media\\SocialMedia_Server\\SocialMedia_API\\SocialMedia_API.csproj",
       "packagesPath": "C:\\Users\\baror\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\baror\\source\\repos\\SocialMedia\\SocialMedia_Server\\SocialMedia_API\\obj\\",
+      "outputPath": "C:\\Users\\baror\\OneDrive\\Documents\\WEBPROJECTS\\Git\\Social-Media\\SocialMedia_Server\\SocialMedia_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

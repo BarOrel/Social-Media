@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R/8rID7CdDXeGier0Ovcw2d6a7+50++GmsNwK246HM9sF1CLFYvPtcEXLu27ZmnkFCHDxQZ18dxjosy4W66fRQ==",
+  "dgSpecHash": "N9GYRTquDEmdUnw+9lP387sHJSabYHskQhRLpbVwMQnTFi+2UOQcaYIGUAK7ZrOm8YR0d7d6IaeoFWMeauw6kw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\baror\\source\\repos\\SocialMedia\\SocialMedia_Server\\SocialMedia_API\\SocialMedia_API.csproj",
+  "projectFilePath": "C:\\Users\\baror\\OneDrive\\Documents\\WEBPROJECTS\\Git\\Social-Media\\SocialMedia_Server\\SocialMedia_API\\SocialMedia_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\baror\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\baror\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.13\\microsoft.aspnetcore.authentication.jwtbearer.6.0.13.nupkg.sha512",
