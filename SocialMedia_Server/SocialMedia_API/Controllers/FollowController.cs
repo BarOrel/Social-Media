@@ -13,28 +13,14 @@ namespace SocialMedia_API.Controllers
     [ApiController]
     public class FollowController : ControllerBase
     {
-
-        private readonly SignInManager<User> signInManager;
-        private readonly IJWTTokenService tokenService;
-        private readonly IGenericRepository<Post> postRepository;
-        private readonly UserManager<User> userManger;
+      
         private readonly IGenericRepository<Follow> followRepository;
         private readonly IPostService postService;
 
-        public FollowController(SignInManager<User> signInManager
-            , IJWTTokenService tokenService
-            , IGenericRepository<Post> postRepository
-            , UserManager<User> userManger
-            , IGenericRepository<Like> LikeRepository
-            , IGenericRepository<Comment> commentRepository
-            , IGenericRepository<Follow> followRepository
+        public FollowController(
+             IGenericRepository<Follow> followRepository
             , IPostService postService)
         {
-
-            this.signInManager = signInManager;
-            this.tokenService = tokenService;
-            this.postRepository = postRepository;
-            this.userManger = userManger;
             this.followRepository = followRepository;
             this.postService = postService;
         }
