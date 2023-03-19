@@ -26,19 +26,33 @@ h2{
      border-radius: 20px;
      background-color: #ffffff52;
 }
-button{
+.edit{
      background-color: transparent;
      color: #0084ff;
      font-size: 25px;
      border: 0px;
 }
-button:hover{
+.edit:hover{
      -webkit-transition: 0.5s;
      transition: 0.5s;
      color: #007dd183;
   
 }
-
+input{
+     font-size: 25px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 20px;
+}
+.save-btn{
+     margin-top: 20px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     font-size: 25px;
+     width: 100px;
+}
 .center{
      width:100vw;
      display: flex;

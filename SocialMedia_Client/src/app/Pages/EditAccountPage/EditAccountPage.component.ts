@@ -8,6 +8,8 @@ import { UserService } from 'src/app/Services/UserService/User.service';
 })
 export class EditAccountPageComponent implements OnInit {
   user:any;
+  NameEdit:boolean = false;
+  ImageEdit:boolean = false;
   constructor(private userService:UserService) { 
     this.LoadUser()
 
@@ -16,6 +18,14 @@ export class EditAccountPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  NameEditFunc(){
+    if(this.NameEdit == true) this.NameEdit = false
+    else{ this.NameEdit = true}
+  }
+  ImageEditFunc(){
+    if(this.ImageEdit == true) this.ImageEdit = false
+    else{ this.ImageEdit = true}
+  }
 
   LoadUser(){
     this.userService.GetUser().subscribe((data:any)=>{

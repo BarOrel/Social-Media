@@ -7,17 +7,28 @@
           <div class="TopRow" >    
 
               <h2>Full Name</h2>
-              <button>Edit</button>
+              <button class="edit" (click)="NameEditFunc()">Edit</button>
 
           </div>
           <h1 class="Name">{{user.fullName}}</h1>
+          <div *ngIf="NameEdit">
+            <input >
+            <button class="save-btn">Save</button>
+          </div>
+          
         </div>
 
         <div class="Edit-Section">
           <div class="TopRow" >
             <h2>Profile Picture</h2>
-            <button>Edit</button>
+            <button class="edit" (click)="ImageEditFunc()">Edit</button>
           </div>
+      
+          <div *ngIf="ImageEdit">
+            <input placeholder="Image Url" style="font-size: 18px; width: 300px;" >
+            <button class="save-btn">Save</button>
+          </div>
+          
           <img src="{{user.imgUrl}}">
         </div>
         
