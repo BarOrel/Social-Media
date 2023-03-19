@@ -50,7 +50,6 @@ namespace SocialMedia_API.Controllers
                     PostId = like.PostId,
                     Type = NotificationType.Like,
                     CreatedTime = DateTime.Now,
-                    
                 };
                 notification.UserId = postRepository.GetById(like.PostId).Result.UserId;
 
