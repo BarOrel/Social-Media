@@ -12,12 +12,31 @@ h1{
      color: #fff;
 }
 
+.Name{
+     padding-top: 0px;
+}
+h2{
+     color: #fff;
+ 
+}
 .Edit-Section{
      margin-top: 3vh;
      width: 700px;
-     height: 500px;
+     padding-bottom: 70px;
      border-radius: 20px;
      background-color: #ffffff52;
+}
+button{
+     background-color: transparent;
+     color: #0084ff;
+     font-size: 25px;
+     border: 0px;
+}
+button:hover{
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
+     color: #007dd183;
+  
 }
 
 .center{
@@ -34,4 +53,10 @@ img{
   margin-right: auto;
  border-radius: 30px;
   max-height: 300px;
+}
+
+.TopRow{
+     padding: 30px;
+     display: flex;
+     justify-content: space-between;
 }
