@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditAccountPageComponent } from './Pages/EditAccountPage/EditAccountPage.component';
 import { ExploreComponent } from './Pages/Explore/Explore.component';
 import { HomeComponent } from './Pages/Home/Home.component';
 import { LoginComponent } from './Pages/Login/Login.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent ,canActivate:[IsLoggedInServiceService]  },
   { path: "explore", component: ExploreComponent },
   { path: "notifications", component: NotificationsComponent ,canActivate:[IsLoggedInServiceService]  },
+  { path: "editAccount", component: EditAccountPageComponent ,canActivate:[IsLoggedInServiceService]  },
   { path: "profile/:id", component: ProfileComponent },
   { path: "post/:id", component: PostPageComponent },
   { path: "login", component: LoginComponent },

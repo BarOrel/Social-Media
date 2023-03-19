@@ -21,6 +21,7 @@ import { IsLoggedInServiceService } from './Services/Auth/is-logged-in-service.s
 import { TopNavbarComponent } from './Components/TopNavbar/TopNavbar.component';
 import { LoadingComponent } from './Components/Loading/Loading.component';
 import { PostGridComponent } from './Components/PostGrid/PostGrid.component';
+import { EditAccountPageComponent } from './Pages/EditAccountPage/EditAccountPage.component';
  
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PostGridComponent } from './Components/PostGrid/PostGrid.component';
     DateAsAgoPipe,
     TopNavbarComponent,
     LoadingComponent,
-    PostGridComponent
+    PostGridComponent,
+    EditAccountPageComponent
     
  
     

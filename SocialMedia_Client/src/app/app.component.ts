@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   public currentWindowWidth: number = 0;
   user:any;
- clickeventsub: Subscription;
+  clickeventsub: Subscription;
   constructor(private userService:UserService,
     private service: EventService,
     @Inject(DOCUMENT) private documment:Document,

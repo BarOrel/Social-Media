@@ -1,7 +1,7 @@
 <div class="main" *ngIf="currentWindowWidth > 1150">
      <div class="profilerow" *ngIf="item != null" (click)="NavigateToProfile()">
           <img *ngIf="item.imgUrl != null" src="{{item.imgUrl}}" >
-          <h2>{{item.fullName}}</h2>
+          <h2 class="name">{{item.fullName}}</h2>
      </div>
      <div class="row" *ngIf="item != null" routerLink="home" (click)="scrollUp(true)"> 
           <img src="https://www.iconpacks.net/icons/1/free-home-icon-189-thumb.png" >
@@ -35,7 +35,7 @@
 
           <h2 *ngIf="item == null" routerLink="/login" >Login</h2>
           <h2 *ngIf="item == null" routerLink="/register" >Register</h2>
-          <h2 *ngIf="item != null">Account Details</h2>
+          <h2 *ngIf="item != null" routerLink="/editAccount">Account Details</h2>
           <h2 *ngIf="item != null" (click)="Logout()">Logout</h2>
     
  
