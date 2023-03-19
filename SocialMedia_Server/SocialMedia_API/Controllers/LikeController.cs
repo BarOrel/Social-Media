@@ -38,15 +38,19 @@ namespace SocialMedia_API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddLike(Like like)
         {
+            
             var allLikes = await likeRepository.GetAll();
             var les = allLikes.Any(n => n.UserId == like.UserId && n.PostId == like.PostId);
             if (les == false)
             {
+                
                 Notification notification = new()
                 {
                     NotifierId = like.UserId,
                     PostId = like.PostId,
-                    Type = NotificationType.Like
+                    Type = NotificationType.Like,
+                    CreatedTime = DateTime.Now,
+                    
                 };
                 notification.UserId = postRepository.GetById(like.PostId).Result.UserId;
 
