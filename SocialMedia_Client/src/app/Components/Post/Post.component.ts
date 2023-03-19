@@ -89,6 +89,30 @@ export class PostComponent implements OnInit {
   })
  }
 
+
+ DeleteComment(id:any,post:any){
+  Swal.fire({
+    title: 'Do you want to delete this comment?',
+    icon : 'question',
+    showDenyButton: true,
+    
+    confirmButtonText: 'Cancel',
+    denyButtonText: `Delete`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+    
+    } else if (result.isDenied) {
+      Swal.fire('Deleted!', '', 'success')
+      this.postService.DeleteComment(id).subscribe((data)=>{
+        console.log(data)
+        this.LoadPost(post)
+      })
+      
+    }
+  })
+ }
+
  OpenMenu(){
     if(this.Menu)
      {this.Menu = false}

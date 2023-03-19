@@ -35,8 +35,11 @@ export class PostService {
   
   Comment(comment:any){
     comment.UserId =  this.authSerivce.userId()
-
     return this.http.post(this.CommentBaseUrl ,comment);
+  }
+
+  DeleteComment(id:any){
+    return this.http.delete(this.CommentBaseUrl + id);
   }
 
   Like(postid:any){

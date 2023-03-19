@@ -8,7 +8,9 @@
      padding:0;
     overflow-x: hidden;
 }
-
+button{
+    cursor: pointer;
+}
 .loading{
     margin-top: 40vh;
     width:100%;

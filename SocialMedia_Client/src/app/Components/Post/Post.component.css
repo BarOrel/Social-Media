@@ -250,7 +250,8 @@ input[type=text]:focus {
      color: #a8a8a8;
 }
 .deletebtn{
-     
+     -webkit-transition: 0.5s;
+     transition: 0.5s;
      color: #fff;
      background-color: transparent;
      float: right;
@@ -258,7 +259,7 @@ input[type=text]:focus {
      border-radius: 10px;
      border: 0px;
 }
-.headbtn:hover {
+button:hover {
      color: #b1b1b1a4;
 
 }

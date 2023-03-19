@@ -81,8 +81,8 @@
         
       </div>
       <div>
-        <button class="deletebtn" *ngIf="item.comment.userId == userId" ><span class="material-symbols-outlined">
-          delete
+        <button class="deletebtn" *ngIf="item.comment.userId == userId" (click)="DeleteComment(item.comment.id, item.comment.postId)" ><span class="material-symbols-outlined">
+          remove
           </span></button>
         <p class="commentTime">{{item.comment.createdTime |  dateAsAgo }}</p>
 
