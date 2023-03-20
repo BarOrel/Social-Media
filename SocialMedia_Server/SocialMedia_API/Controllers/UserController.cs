@@ -53,9 +53,9 @@ namespace SocialMedia_API.Controllers
                 LastName = model.LastName,
                 Gender = model.Gender,
                 Images = model.ImageUrl,
-               
-
+         
             };
+
             var result = await userManger.CreateAsync(user, model.Password);
             if(result.Succeeded) 
                 return Ok(result);
