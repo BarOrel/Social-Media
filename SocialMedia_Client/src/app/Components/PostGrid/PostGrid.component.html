@@ -6,7 +6,9 @@
       <p>{{item.post.createdTime | dateAsAgo}}</p>
     </div>
           <button class="headbtn">...</button>
-          <button class="headbtn" (click)="DeletePost(item.post.id)">X</button>
+          <button class="headbtn" (click)="DeletePost(item.post.id)" *ngIf="item.userId == userId"><span class="material-symbols-outlined">
+            close
+            </span></button>
   </div>  
 <div style="cursor: pointer;" (click)="NavigateToPost(item.post.id)" >
   <p>{{item.post.content}}</p>
