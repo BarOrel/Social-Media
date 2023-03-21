@@ -11,10 +11,12 @@
             <div >
               <div>
                 <div style="display: flex;">
+                  
                   <h2 (click)="NavigateToProfile(item.notification.notifierId)">{{item.username}}</h2>
                   <h3 *ngIf="item.notification.type == 0" (click)="NavigateToPost(item.post.post.id)" >Liked your post</h3>
                   <h3 *ngIf="item.notification.type == 1" (click)="NavigateToPost(item.post.post.id)">Comment on your post</h3>
-                  <h3 *ngIf="item.notification.type == 2" (click)="NavigateToPost(item.post.post.id)">Share Your Post</h3>
+                  <h3 *ngIf="item.notification.type == 2" (click)="NavigateToPost(item.post.post.id)">Start following you </h3>
+                  <h3 *ngIf="item.notification.type == 4" (click)="NavigateToPost(item.post.post.id)">Share Your Post</h3>
                   
                 </div>
 
