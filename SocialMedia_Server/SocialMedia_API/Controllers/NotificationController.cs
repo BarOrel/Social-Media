@@ -33,7 +33,8 @@ namespace SocialMedia_API.Controllers
             {
                 NotificationDTO notificationDTO = new();
                 notificationDTO.Notification = item;
-                
+                notificationDTO.Notification.IsRead = true;
+                await notificationRepository.Update(notificationDTO.Notification);
                 var user = await userManger.FindByIdAsync(notificationDTO.Notification.NotifierId);
                 notificationDTO.Post = await postService.GetPostDtoById(item.PostId);
                 notificationDTO.Username = user.FirstName +" " + user.LastName;
@@ -52,6 +53,14 @@ namespace SocialMedia_API.Controllers
         {
             await notificationRepository.Insert(notification);
             return Ok(notification);
+        }
+
+        [HttpGet("GetCounter/{UserId}")]
+        public async Task<IActionResult> GetNotificationsCounter(string UserId)
+        {
+            var unreadNotifications = await notificationRepository.GetAll();
+            unreadNotifications = unreadNotifications.Where(n => n.UserId == UserId && n.IsRead == false);
+            return Ok(unreadNotifications.Count());
         }
     }
 }
