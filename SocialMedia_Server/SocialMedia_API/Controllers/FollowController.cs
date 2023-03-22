@@ -16,13 +16,17 @@ namespace SocialMedia_API.Controllers
       
         private readonly IGenericRepository<Follow> followRepository;
         private readonly IPostService postService;
+        private readonly IGenericRepository<Notification> notificationRepository;
 
         public FollowController(
              IGenericRepository<Follow> followRepository
-            , IPostService postService)
+            , IPostService postService
+            , IGenericRepository<Notification> notificationRepository
+             )
         {
             this.followRepository = followRepository;
             this.postService = postService;
+            this.notificationRepository = notificationRepository;
         }
 
         [HttpPost("Follow")]
@@ -37,6 +41,16 @@ namespace SocialMedia_API.Controllers
                     FollowerId = followDto.UserId,
                     FollowingId = followDto.Following
                 };
+
+                Notification notification = new()
+                {
+                    CreatedTime= DateTime.Now,
+                    UserId = followDto.Following,
+                    NotifierId = followDto.UserId,
+                    Type = Data.Models.Enums.NotificationType.Follow
+                };
+
+                await notificationRepository.Insert(notification);
                 await followRepository.Insert(follow);
                 return Ok(follow);
 

@@ -36,12 +36,16 @@ namespace SocialMedia_API.Controllers
                 notificationDTO.Notification.IsRead = true;
                 await notificationRepository.Update(notificationDTO.Notification);
                 var user = await userManger.FindByIdAsync(notificationDTO.Notification.NotifierId);
-                notificationDTO.Post = await postService.GetPostDtoById(item.PostId);
+                
+                if (item.PostId != 0)
+                    notificationDTO.Post = await postService.GetPostDtoById(item.PostId);
+                
+
                 notificationDTO.Username = user.FirstName +" " + user.LastName;
                 notificationDTO.UserImg = user.Images;
+                notificationDTOs.Add(notificationDTO);
                 
-                if (notificationDTO.Post != null)
-                     notificationDTOs.Add(notificationDTO);
+         
                  
             }
            

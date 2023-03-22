@@ -25,7 +25,7 @@ namespace SocialMedia_API.Services.PostService
             PostDTO post = new();
             List<CommentDTO> Comments = new();
             var res = await postRepository.GetById(Id);
-            var user = await  userManger.FindByIdAsync(res.UserId);
+            var user = await userManger.FindByIdAsync(res.UserId);
 
             post.Post = res;
             var comments = commentRepository.GetAll().Result.Where(n => n.PostId == res.Id).ToList();

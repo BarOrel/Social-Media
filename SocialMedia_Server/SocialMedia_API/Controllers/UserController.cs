@@ -97,6 +97,7 @@ namespace SocialMedia_API.Controllers
         public async Task<IActionResult> NavbarView(string UserId)
         {
             
+            var unreadNotifications = await notificationsRepository.GetAll();
             var user = await userManger.FindByIdAsync(UserId);
             if (user != null)
             {
@@ -107,7 +108,6 @@ namespace SocialMedia_API.Controllers
                 FullName = $"{user.FirstName} {user.LastName}"
 
             };
-                var unreadNotifications = await notificationsRepository.GetAll();
                 view.UnreadNotifications = unreadNotifications.Where(n => n.UserId == UserId && n.IsRead == false).Count();
                 return Ok(view);
             }
