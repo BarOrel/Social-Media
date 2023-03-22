@@ -52,6 +52,7 @@ LoadUser(){
   this.userService.GetUser().subscribe((data:any)=>{
     console.log(data)
     this.user = data
+    
   })
  }
 }

@@ -40,6 +40,16 @@ img{
      max-width: 50px;
 }
 
+.Notifications-Counter{
+     background-color: red;
+     color: #fff;
+     text-align: center;
+     height: 26px;
+     border-radius: 30px;
+     width: 20px;
+     font-size: 18px;
+}
+
 .profilerow img{
      margin-left: 10px;
      margin-top: 0px;

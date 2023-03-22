@@ -5,5 +5,6 @@
         public string UserId { get; set; }
         public string FullName { get; set; }
         public string ImgUrl { get; set; }
+        public int UnreadNotifications { get; set; }
     }
 }

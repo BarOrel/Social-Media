@@ -23,6 +23,7 @@ namespace SocialMedia_API.Controllers
         private readonly UserManager<User> userManger;
         private readonly IGenericRepository<Follow> followRepository;
         private readonly IPostService postService;
+        private readonly IGenericRepository<Notification> notificationsRepository;
 
         public UserController(SignInManager<User> signInManager
             , IJWTTokenService tokenService
@@ -31,7 +32,9 @@ namespace SocialMedia_API.Controllers
             , IGenericRepository<Like> LikeRepository
             , IGenericRepository<Comment> commentRepository
             , IGenericRepository<Follow> followRepository
-            , IPostService postService)
+            , IPostService postService
+            , IGenericRepository<Notification> notificationsRepository)
+
         {
    
             this.signInManager = signInManager;
@@ -40,6 +43,7 @@ namespace SocialMedia_API.Controllers
             this.userManger = userManger;
             this.followRepository = followRepository;
             this.postService = postService;
+            this.notificationsRepository = notificationsRepository;
         }
 
         [HttpPost("Register")]
@@ -92,6 +96,7 @@ namespace SocialMedia_API.Controllers
         [HttpGet]
         public async Task<IActionResult> NavbarView(string UserId)
         {
+            
             var user = await userManger.FindByIdAsync(UserId);
             if (user != null)
             {
@@ -102,6 +107,8 @@ namespace SocialMedia_API.Controllers
                 FullName = $"{user.FirstName} {user.LastName}"
 
             };
+                var unreadNotifications = await notificationsRepository.GetAll();
+                view.UnreadNotifications = unreadNotifications.Where(n => n.UserId == UserId && n.IsRead == false).Count();
                 return Ok(view);
             }
             return BadRequest();

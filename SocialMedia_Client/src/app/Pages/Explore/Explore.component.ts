@@ -20,6 +20,7 @@ export class ExploreComponent implements OnInit {
   
   ngOnInit() {
     this.LoadPage()
+   
   }
 
   LoadPage(){
