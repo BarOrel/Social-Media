@@ -56,6 +56,13 @@ namespace SocialMedia_API.Controllers
 
             }
 
+            var followedDelete = await notificationRepository.GetAll();
+            followedDelete = followedDelete.Where(n => 
+            n.Type == Data.Models.Enums.NotificationType.Follow &&
+            n.NotifierId == followDto.UserId && 
+            n.UserId == followDto.Following);
+
+            await notificationRepository.Delete(followedDelete.FirstOrDefault());
             await followRepository.Delete(isFollowed);
             return Ok();
 

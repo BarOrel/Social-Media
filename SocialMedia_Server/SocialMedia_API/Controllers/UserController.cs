@@ -170,6 +170,13 @@ namespace SocialMedia_API.Controllers
             return Ok(userDTOs);
         }
 
+        [HttpPost("ChangeName")]
+        public async Task<IActionResult> ChangeName()
+        {
+
+            return Ok();
+        }
+
 
 
     }
