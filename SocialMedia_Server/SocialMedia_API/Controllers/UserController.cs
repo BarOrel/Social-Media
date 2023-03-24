@@ -174,12 +174,16 @@ namespace SocialMedia_API.Controllers
         public async Task<IActionResult> ChangeName(ChangeNameDTO changeNameDTO)
         {
             var user = await userManger.FindByIdAsync(changeNameDTO.UserId);
-            user.FirstName = changeNameDTO.FirstName;
-            user.LastName = changeNameDTO.LastName;
-            var result = await userManger.UpdateAsync(user);
+            if (user != null)
+            {
+                user.FirstName = changeNameDTO.FirstName;
+                user.LastName = changeNameDTO.LastName;
 
-            if (result.Succeeded)
-                return Ok();
+                var result = await userManger.UpdateAsync(user);
+
+                if (result.Succeeded)
+                    return Ok();
+            }
             
             return BadRequest();
             
