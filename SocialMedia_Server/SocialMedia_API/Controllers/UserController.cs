@@ -60,7 +60,6 @@ namespace SocialMedia_API.Controllers
          
             };
 
-
             var result = await userManger.CreateAsync(user, model.Password);
             if(result.Succeeded) 
                 return Ok(result);
