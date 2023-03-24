@@ -12,8 +12,9 @@
           </div>
           <h1 class="Name">{{user.fullName}}</h1>
           <div *ngIf="NameEdit">
-            <input >
-            <button class="save-btn">Save</button>
+            <input placeholder="First Name" [(ngModel)]="FirstNameText" >
+            <input placeholder="Last Name" [(ngModel)]="LastNameText" >
+            <button class="save-btn" (click)="ChangeNameFunc()">Save</button>
           </div>
           
         </div>
@@ -26,7 +27,7 @@
       
           <div *ngIf="ImageEdit">
             <input placeholder="Image Url" style="font-size: 18px; width: 300px;" >
-            <button class="save-btn">Save</button>
+            <button class="save-btn" >Save</button>
           </div>
           
           <img src="{{user.imgUrl}}">

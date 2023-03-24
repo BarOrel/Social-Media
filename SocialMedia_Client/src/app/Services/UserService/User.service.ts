@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ChangeNameDTO } from 'src/app/Models/DTO/ChangeNameDTO';
 import { FollowDTO } from 'src/app/Models/DTO/FollowDTO';
 import { AuthService } from '../Auth/Auth.service';
 
@@ -21,8 +22,13 @@ export class UserService {
   GetProfile(id:any){
     return this.http.get(this.BaseUrl+"GetProfile/"+ id);
   }
+
   GetFollowing(){
     return this.http.get(this.BaseUrl+"Following/"+ this.authSerivce.userId());
+  }
+
+  ChangeName(changeNameDTO:ChangeNameDTO){
+    return this.http.post(this.BaseUrl+"ChangeName/",changeNameDTO);
   }
 
   IsFollowed(id:any){
