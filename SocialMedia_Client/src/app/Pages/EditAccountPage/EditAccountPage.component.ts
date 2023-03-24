@@ -11,7 +11,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./EditAccountPage.component.css']
 })
 export class EditAccountPageComponent implements OnInit {
-
   user:any;
   FirstNameText:string = '';
   LastNameText:string = '';
