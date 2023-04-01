@@ -88,9 +88,7 @@ namespace SocialMedia_API.Controllers
                 token = tokenService.GenerateToken(userFromDB),
 
             });
-
         }
-
 
         [HttpGet]
         public async Task<IActionResult> NavbarView(string UserId)
