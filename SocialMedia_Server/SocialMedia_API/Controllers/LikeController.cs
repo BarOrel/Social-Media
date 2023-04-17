@@ -36,7 +36,7 @@ namespace SocialMedia_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddLike(Like like)
+        public async Task<IActionResult> T(Like like)
         {
             
             var allLikes = await likeRepository.GetAll();
