@@ -36,14 +36,12 @@ namespace SocialMedia_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> T(Like like)
+        public async Task<IActionResult> ToggleLike(Like like)
         {
-            
-            var allLikes = await likeRepository.GetAll();
-            var les = allLikes.Any(n => n.UserId == like.UserId && n.PostId == like.PostId);
-            if (les == false)
+            var Likes = await likeRepository.GetAll();
+            var FoundedLike = Likes.Any(n => n.UserId == like.UserId && n.PostId == like.PostId);
+            if (FoundedLike == false)
             {
-                
                 Notification notification = new()
                 {
                     NotifierId = like.UserId,
@@ -61,7 +59,7 @@ namespace SocialMedia_API.Controllers
 
             }
 
-            var Liked = allLikes.Where(n => n.UserId == like.UserId && n.PostId == like.PostId).FirstOrDefault();
+            var Liked = Likes.Where(n => n.UserId == like.UserId && n.PostId == like.PostId).FirstOrDefault();
             await likeRepository.Delete(Liked);
 
             return Ok(false);
