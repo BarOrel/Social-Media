@@ -71,10 +71,8 @@ namespace SocialMedia_API.Controllers
             var allLikes = await likeRepository.GetAll();
             var Liked = allLikes.Where(n => n.UserId == like.UserId && n.PostId == like.PostId).FirstOrDefault();
             if (Liked != null)
-            {
                 return Ok(true);
-
-            }
+            
             return Ok(false);
         }
     }

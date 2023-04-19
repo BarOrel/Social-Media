@@ -12,6 +12,7 @@ namespace SocialMedia_API.Data.Models
         public string? Images { get; set; }
         public City ?Location { get; set; }
 
-
+        string GetFullName() => $"{FirstName} {LastName}";
+        
     }
 }
