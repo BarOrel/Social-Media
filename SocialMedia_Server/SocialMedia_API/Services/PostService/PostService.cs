@@ -11,13 +11,15 @@ namespace SocialMedia_API.Services.PostService
         private readonly UserManager<User> userManger;
         private readonly IGenericRepository<Like> likeRepository;
         private readonly IGenericRepository<Comment> commentRepository;
+        private readonly IGenericRepository<Follow> followRepository;
 
-        public PostService(IGenericRepository<Post> postRepository, UserManager<User> userManger, IGenericRepository<Like> LikeRepository, IGenericRepository<Comment> commentRepository)
+        public PostService(IGenericRepository<Post> postRepository, UserManager<User> userManger, IGenericRepository<Like> LikeRepository, IGenericRepository<Comment> commentRepository, IGenericRepository<Follow> followRepository)
         {
             this.postRepository = postRepository;
             this.userManger = userManger;
             likeRepository = LikeRepository;
             this.commentRepository = commentRepository;
+            this.followRepository = followRepository;
         }
 
         public async Task<PostDTO> GetPostDtoById(int Id)
@@ -102,6 +104,28 @@ namespace SocialMedia_API.Services.PostService
 
         }
 
+
+        public async Task<List<PostDTO>> GetFollowingPosts(string UserId)
+        {
+            List<PostDTO> Posts = new();
+            var allPosts = await postRepository.GetAll();
+            var followers = await followRepository.GetAll();
+            var posts = allPosts
+                 .Where(p => followers
+                   .Where(f => f.FollowerId == UserId)
+                    .Select(f => f.FollowingId)
+                        .Contains(p.UserId))
+                            .ToList();
+
+            posts.AddRange(allPosts.Where(n => n.UserId == UserId));
+
+            foreach (var item in posts)
+            {
+                var post = await GetPostDtoById(item.Id);
+                Posts.Add(post);
+            }
+            return (List<PostDTO>)Posts.OrderByDescending(post => post.Post.CreatedTime);
+        }
 
 
 
