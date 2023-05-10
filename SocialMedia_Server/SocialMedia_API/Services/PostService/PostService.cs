@@ -84,7 +84,6 @@ namespace SocialMedia_API.Services.PostService
                         dtocomment.UserFullName = $"{commentUser.FirstName} {commentUser.LastName}";
                         dtocomment.UserImg = commentUser.Images;
                     }
-
                     Comments.Add(dtocomment);
                 }
 
